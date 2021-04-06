@@ -1,23 +1,26 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import { deleteCustomer } from '../redux/Index'
+import Loading from './Loading';
+import RedirectToHome from './RedirectToHome';
+import RedirectToProfile from './RedirectToProfile';
 
-function DeleteCustomer ({ customerData, deleteCustomer }) {
+function DeleteCustomer ({ customerData, deleteCustomer, ...props}) {
   
   useEffect(() => {
-    let custId = 499;
+    let custId = props.history.location.customerId;
     deleteCustomer(custId)
   }, [])
 
   
   return customerData.loading ? (
-    <h2>Loading</h2>
-  ) : customerData.error ? (
-    <h4 className='text-danger mt-3'>Test For Delete Customer Functionality Failed With Following Message : {customerData.error}</h4>
-  ) : (
-    <div>
-        <h4 className = 'text-success mt-3'>Test For Delete Customer Functionality Successful</h4>
+    <div className='loading' style={{position: 'absolute',left: '50%', top: '50%',transform: 'translate(-50%, -50%)'}}>
+      <Loading/>
     </div>
+  ) : customerData.error ? (
+    <RedirectToProfile/>
+  ) : (
+    <RedirectToHome/>
   )
 }
 
