@@ -16,8 +16,8 @@ function Header() {
           aria-label="Toggle navigation"
         >
         </button>
-        <a className="navbar-brand text-brand" href="/dashboard">
-          RealEstate<span className="color-b">Agency</span>
+        <a className="navbar-brand text-brand" href="/">
+          Estate<span className="color-b">Agency</span>
         </a>
 
         <div
@@ -26,14 +26,14 @@ function Header() {
         >
           <ul className="navbar-nav">
             <li className="nav-item">
-              <a className="nav-link"  href="/dashboard">
+              <a className="nav-link"  href="/">
                 Home
               </a>
             </li>
 
             <li className="nav-item">
-              <a className="nav-link" href="/customers">
-                Customers
+              <a className="nav-link" href="/signup_signin">
+                Services
               </a>
             </li>
 
@@ -55,8 +55,8 @@ function Header() {
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link " href="/profile">
-                Profile
+              <a className="nav-link " href="/signup_signin">
+                Login/Register
               </a>
             </li>
           </ul>

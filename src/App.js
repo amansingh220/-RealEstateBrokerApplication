@@ -12,13 +12,14 @@ import EditCustomer from "./components/EditCustomer";
 import Home from "./components/Home";
 import ConfirmBoxForRemove from "./components/ConfirmBoxForRemove";
 import Footer from "./components/Footer";
-import Header from "./components/Header";
+import DashBoard from "./components/DashBoard";
+import SignUp_SignIn from "./components/SignUp_SignIn";
+import Login from "./components/Login";
 
 function App() {
   return (
     <Provider store={store}>
     <div >
-      <Header/>
       <Router>
         <div className="App">
           <Switch>
@@ -29,10 +30,13 @@ function App() {
             <Route path = "/update" component = {EditCustomer}></Route>
             <Route path = "/deactivate" component = {RemoveCustomer}></Route>
             <Route path = "/confirm" component = {ConfirmBoxForRemove}></Route>
+            <Route path = "/dashboard" component = {DashBoard}></Route>
+            <Route path = "/signup_signin" component = {SignUp_SignIn}></Route>
+            <Route path = "/login" component = {Login}></Route>
           </Switch>
         </div>
       </Router>
-      <Footer/>
+      {/* <Footer/> */}
     </div>
     </Provider>
   );

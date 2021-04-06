@@ -2,8 +2,9 @@ import React ,{useState ,useEffect} from 'react'
 import { connect } from 'react-redux'
 import { insertCustomer } from '../redux/Index'
 import '../rbacss/registration.css'
+import Header from './Header2';
 
-function AddCustomer ({insertCustomer, customerData}) {
+function AddCustomer ({insertCustomer, customerData, ...props}) {
   
   let customerDetails = {custName : "", password : "", mobile : "", email : "", city : ""};
   
@@ -17,8 +18,10 @@ function AddCustomer ({insertCustomer, customerData}) {
   let [submit,setSubmit]=useState(customerDetails)
 
   useEffect(() => {
-    if(custNameError === "" && emailError === "" && mobileError === "" && passwordError === "" && cityError === "") {
+    const checkBox = document.getElementById("confirm");
+    if(custNameError === "" && emailError === "" && mobileError === "" && passwordError === "" && cityError === "" && checkBox.checked) {
       insertCustomer(customer)
+      props.history.push('/dashboard')
     }
   }, [submit])
 
@@ -99,8 +102,9 @@ function AddCustomer ({insertCustomer, customerData}) {
 
 return (
 <React.Fragment>
+  <Header/>
   <div className = 'registrationBodyCss'>
-      <div className = 'row'>
+      <div className = 'row py-4 mt-4 '>
           <div className = 'col-md-10 offset = md-1'>
               <div className = 'row'>
                   <div className = 'col-md-5 register-left'>
@@ -132,6 +136,12 @@ return (
                            <div className = 'form-group'>
                                <input id = 'city' required='true' onChange={(e) => setCustomer({ ...customer, city: e.target.value })} type = 'text' className = 'form-control' placeholder = "City"></input>
                                <p className='text-left text-danger ml-1'>{cityError}</p>
+                           </div>
+                           <div className="">
+                              <input id='confirm' class="float-left mt-4 mr-2" type="checkbox" value=""/>
+                                <label className="float-left mt-3" for="defaultCheck1">
+                                  Check this box to confirm the details
+                                </label>
                            </div>
                            <button className = 'btn btn-primary'>Register</button>
                      </form>

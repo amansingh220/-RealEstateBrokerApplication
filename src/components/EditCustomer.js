@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { updateCustomer } from '../redux/Index'
 import '../rbacss/profile.css'
 import profile from'../rbacss/profilepicture.jpg'
+import Header from './Header'
 
 function EditCustomer ({updatedCustomerDetails, updateCustomer, ...props}) {
   let customerMock = {custName: "", email: "", mobile: "", password: "", city: ""};
@@ -102,6 +103,7 @@ function EditCustomer ({updatedCustomerDetails, updateCustomer, ...props}) {
 
   return (
     <React.Fragment>
+      <Header/>
       <div Class="ProfileBodyCss">
         <div class="container rounded bg-white mt-4">
           <div class="row">
@@ -167,10 +169,10 @@ function EditCustomer ({updatedCustomerDetails, updateCustomer, ...props}) {
                 <div>
                   <input id='confirm' class="float-left mt-4 mr-2" type="checkbox" value=""/>
                       <label class="float-left mt-3" for="defaultCheck1">
-                      Confirm
+                      Check this box to confirm the details
                       </label>
                 </div>
-
+      
                 <button onClick={()=>cancelEvent()} className = 'btn btn-danger float-right ml-3 mt-1'>Cancel</button>
                 <button className = 'btn btn-success float-right mt-1'>Save Details</button>
                 {/* <h6>{JSON.stringify(props.history.location.viewedCustomerDetails.custId)}</h6> */}

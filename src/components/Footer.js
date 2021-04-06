@@ -1,150 +1,103 @@
 import React from "react";
 import '../rbacss/header.css'
 
-function Footer() {
-  return (
-    //   start footer
-    <div>
-      {/* <!--footer starts from here--> */}
-      <footer className="footer">
-        <div className="container bottom_border">
-          <div className="row">
-            <div className=" col-sm-4 col-md col-sm-4  col-12 col">
-              <h5 className="headin5_amrc col_white_amrc pt2">Find us</h5>
-              {/* <!--headin5_amrc--> */}
-              <p className="mb10">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s
-              </p>
-              <p>
-                <i className="fa fa-location-arrow"></i> 9878/25 sec 9 rohini 35{" "}
-              </p>
-              <p>
-                <i className="fa fa-phone"></i> +91-9999878398{" "}
-              </p>
-              <p>
-                <i className="fa fa fa-envelope"></i> info@example.com{" "}
-              </p>
-            </div>
 
-            <div className=" col-sm-4 col-md  col-6 col">
-              <h5 className="headin5_amrc col_white_amrc pt2">Quick links</h5>
-              {/* <!--headin5_amrc--> */}
-              <ul className="footer_ul_amrc">
-                <li>
-                  <a href="#">Image Rectoucing</a>
-                </li>
-                <li>
-                  <a href="#">Clipping Path</a>
-                </li>
-                <li>
-                  <a href="#">Hollow Man Montage</a>
-                </li>
-                <li>
-                  <a href="#">Ebay & Amazon</a>
-                </li>
-                <li>
-                  <a href="#">Hair Masking/Clipping</a>
-                </li>
-                <li>
-                  <a href="#">Image Cropping</a>
-                </li>
+
+    function Footer(props) {
+      return (
+        <div>
+    <head>
+      <title>Footer Bootstrap 4</title>
+    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"/>
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"/>
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet"/>
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.0/css/mdb.min.css" rel="stylesheet"/>
+    </head>
+    <body>
+    
+    <footer class="page-footer bg-dark">
+    
+      <div class="bg-success">
+        <div class="container">
+          <div class="row py-4 d-flex align-items-center">
+           
+            <div class="col-md-12 text-center"> 
+                <a href="#"><i class="fab fa-facebook-f white-text mr-4"> </i></a>         
+                <a href="#"><i class="fab fa-twitter white-text mr-4"> </i></a>
+                <a href="#"><i class="fab fa-google-plus-g white-text mr-4"> </i></a>
+                <a href="#"><i class="fab fa-linkedin-in white-text mr-4"> </i></a>
+                <a href="#"><i class="fab fa-instagram white-text"> </i></a> 
+               </div>
+    
+         </div>
+        </div>
+      </div>
+    
+      <div class="container text-center text-md-left mt-5">
+        <div class="row">
+    
+          <div class="col-md-3 mx-auto mb-4">
+            <h6 class="text-uppercase font-weight-bold">The Providers</h6>
+            <hr class="bg-success mb-4 mt-0 d-inline-block mx-auto" style="width: 125px; height: 2px"/>
+            <p class="mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+          </div>
+    
+          <div class="col-md-2 mx-auto mb-4">
+            <h6 class="text-uppercase font-weight-bold">Products</h6>
+            <hr class="bg-success mb-4 mt-0 d-inline-block mx-auto" style="width: 85px; height: 2px"/>
+           
+             <ul class="list-unstyled">
+                <li class="my-2"><a href="#">Html 5</a></li>        
+                <li class="my-2"><a href="#">Css 3</a></li>
+                <li class="my-2"><a href="#">Bootstrap 4</a></li>
+                <li class="my-2"> <a href="#">JavaScript</a></li>         
               </ul>
-              {/* <!--footer_ul_amrc ends here--> */}
-            </div>
-
-            <div className=" col-sm-4 col-md  col-12 col">
-              <h5 className="headin5_amrc col_white_amrc pt2">Follow us</h5>
-              {/* <!--headin5_amrc ends here--> */}
-
-              <ul className="footer_ul2_amrc">
-                <li>
-                  <a href="#">
-                    <i className="fab fa-twitter fleft padding-right"></i>{" "}
-                  </a>
-                  <p>
-                    Lorem Ipsum is simply dummy text of the printing...
-                    <a href="#">https://www.lipsum.com/</a>
-                  </p>
-                </li>
-                <li>
-                  <a href="#">
-                    <i className="fab fa-twitter fleft padding-right"></i>{" "}
-                  </a>
-                  <p>
-                    Lorem Ipsum is simply dummy text of the printing...
-                    <a href="#">https://www.lipsum.com/</a>
-                  </p>
-                </li>
-                <li>
-                  <a href="#">
-                    <i className="fab fa-twitter fleft padding-right"></i>{" "}
-                  </a>
-                  <p>
-                    Lorem Ipsum is simply dummy text of the printing...
-                    <a href="#">https://www.lipsum.com/</a>
-                  </p>
-                </li>
+          </div>
+      
+          <div class="col-md-2 mx-auto mb-4">
+            <h6 class="text-uppercase font-weight-bold">Useful links</h6>
+            <hr class="bg-success mb-4 mt-0 d-inline-block mx-auto" style="width: 110px; height: 2px"/>
+              <ul class="list-unstyled">
+                <li class="my-2"><a href="#">Home</a></li>        
+                <li class="my-2"><a href="#">About</a></li>
+                <li class="my-2"><a href="#">Services</a></li>
+                <li class="my-2"> <a href="#">Contact</a></li>         
               </ul>
-              {/* <!--footer_ul2_amrc ends here--> */}
-            </div>
+          </div>
+    
+          <div class="col-md-3 mx-auto mb-4">
+            <h6 class="text-uppercase font-weight-bold">Contact</h6>
+            <hr class="bg-success mb-4 mt-0 d-inline-block mx-auto" style="width: 75px; height: 2px"/>
+              <ul class="list-unstyled">
+                <li class="my-2"><i class="fas fa-home mr-3"></i> Karachi, NY 10012, US</li>
+                <li class="my-2"><i class="fas fa-envelope mr-3"></i> theproviders@gmail.com</li>
+                <li class="my-2"><i class="fas fa-phone mr-3"></i> + 01 234 567 88</li>
+                <li class="my-2"><i class="fas fa-print mr-3"></i> + 01 234 567 89</li>
+              </ul>
           </div>
         </div>
-
-        <div className="container">
-          <ul className="foote_bottom_ul_amrc">
-            <li>
-              <a href="#">Home</a>
-            </li>
-            <li>
-              <a href="#">About</a>
-            </li>
-            <li>
-              <a href="#">Services</a>
-            </li>
-            <li>
-              <a href="#">Property</a>
-            </li>
-            <li>
-              <a href="#">Blog</a>
-            </li>
-            <li>
-              <a href="#">Contact</a>
-            </li>
-          </ul>
-          {/* <!--foote_bottom_ul_amrc ends here--> */}
-          <p className="text-center">
-            Copyright @2021 | Designed With by <a href="#">RBA Team</a>
-          </p>
-
-          <ul className="social_footer_ul">
-            <li>
-              <a href="#">
-                <i className="fab fa-facebook-f"></i>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <i className="fab fa-twitter"></i>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <i className="fab fa-linkedin"></i>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <i className="fab fa-instagram"></i>
-              </a>
-            </li>
-          </ul>
-          {/* <!--social_footer_ul ends here--> */}
+      </div>
+    
+      <div class="footer-copyright text-center py-3">
+        <p>&copy; Copyright
+        <a href="#">theprovider.com</a></p>
+        <p>Designed by The Providers</p>
+      </div>
+    </footer>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.0/js/mdb.min.js"></script>
+    </body>
         </div>
-      </footer>
-    </div>
-  );
+      );
 }
 
 export default Footer;

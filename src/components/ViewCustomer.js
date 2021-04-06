@@ -4,12 +4,13 @@ import { fetchCustomer } from '../redux/Index'
 import '../rbacss/profile.css'
 import profile from'../rbacss/profilepicture.jpg'
 import Loading from './Loading';
-import RedirectToHome2 from './RedirectToHome2';
+import RedirectToDashboard from './RedirectToDashboard';
+import Header from './Header'
 
 function ViewCustomer ({customerData, fetchCustomer, ...props}) {
   
   useEffect(() => {
-    let custId = 920;
+    let custId = 743;
     fetchCustomer(custId)
   }, [])
 
@@ -32,9 +33,13 @@ function ViewCustomer ({customerData, fetchCustomer, ...props}) {
       <Loading/>
     </div>
   ) : customerData.error ? (
-    <RedirectToHome2/>
+    <React.Fragment>
+    <Header/>
+    <RedirectToDashboard/>
+    </React.Fragment>
   ) : (
     <React.Fragment>
+    <Header/>
     <div Class="ProfileBodyCss mt-4">
       <div class="container rounded bg-white">
         <div class="row">

@@ -2,8 +2,9 @@ import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import { fetchAllCustomers } from '../redux/Index'
 import Loading from './Loading';
-import RedirectToHome2 from './RedirectToHome2';
+import RedirectToDashboard from './RedirectToDashboard';
 import Button from '@material-ui/core/Button';
+import Header from './Header';
 
 function ListAllCustomers ({ customerData, fetchAllCustomers }) {
   useEffect(() => {
@@ -11,11 +12,17 @@ function ListAllCustomers ({ customerData, fetchAllCustomers }) {
   }, [])
   return customerData.loading ? (
     <div className='loading' style={{position: 'absolute',left: '50%', top: '50%',transform: 'translate(-50%, -50%)'}}>
+      <Header/>
       <Loading/>
     </div>
   ) : customerData.error ? (
-    <RedirectToHome2/>
+    <React.Fragment>
+    <Header/>
+    <RedirectToDashboard/>
+    </React.Fragment>
   ) : (
+    <React.Fragment>
+    <Header/>
     <div className = "py-4 mt-5">
       <div className = "row">
         <table className = "table table-striped table-bordered">
@@ -47,6 +54,7 @@ function ListAllCustomers ({ customerData, fetchAllCustomers }) {
         </table>
       </div>
     </div>
+    </React.Fragment>
   )
 }
 

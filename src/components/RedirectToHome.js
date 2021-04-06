@@ -6,6 +6,7 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import { useHistory } from 'react-router';
+import Header from './Header2';
 
 export default function ConfirmBox(props) {
   const [open, setOpen] = React.useState(true);
@@ -15,12 +16,12 @@ export default function ConfirmBox(props) {
     setOpen(false);
     history.push({
         pathname: '/',
-        customerId: props.customerId  
       });   
   };
 
   return (
     <div>
+      <Header/>
       <Dialog
         open={open}
         aria-labelledby="alert-dialog-title"

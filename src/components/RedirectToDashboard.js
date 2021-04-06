@@ -8,14 +8,14 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import { useHistory } from 'react-router';
 import Header from './Header';
 
-export default function ConfirmBox() {
+export default function RedirectToDashboard(props) {
   const [open, setOpen] = React.useState(true);
-  let history = useHistory() 
+  let history = useHistory()
 
   const handleAgree = () => {
     setOpen(false);
     history.push({
-        pathname: '/profile'
+        pathname: '/dashboard',
       });   
   };
 
@@ -27,10 +27,10 @@ export default function ConfirmBox() {
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
       >
-        <DialogTitle id="alert-dialog-title">{"Some Error Occurred, Account Deactivation Failed"}</DialogTitle>
+        <DialogTitle id="alert-dialog-title">{"Something Went Wrong"}</DialogTitle>
         <DialogContent>
           <DialogContentText id="alert-dialog-description">
-            Redirecting to the profile page.
+            Try again after some time.
           </DialogContentText>
         </DialogContent>
         <DialogActions>
