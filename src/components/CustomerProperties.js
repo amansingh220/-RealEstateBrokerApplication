@@ -4,9 +4,8 @@ import RedirectToDashboard from './RedirectToDashboard';
 
 function CustomerProperties(props) {
   
-  if(props.history.location.properties === undefined) {
-    return <RedirectToDashboard/>
-  } else {
+  let properties = JSON.parse(localStorage.getItem("properties"));
+
   return (
     <React.Fragment>
       <Header/>
@@ -27,7 +26,7 @@ function CustomerProperties(props) {
             </thead>
             <tbody>
               {
-                  props.history.location.properties.map(
+                  properties.map(
                       property => 
                       <tr className="active" key = {property.propId}>
                         <td> {property.propId} </td>   
@@ -47,7 +46,6 @@ function CustomerProperties(props) {
       </div>
     </React.Fragment>
     );
-  }
 }
 
 export default CustomerProperties;

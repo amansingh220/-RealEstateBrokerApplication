@@ -2,6 +2,11 @@ import React from 'react';
 import Header from './Header';
 
 function DashBoard(props) {
+
+    if(props.history.location.customerId !== undefined) {
+        localStorage.setItem("custId", props.history.location.customerId);
+    }
+
     return (
         <div>
             <Header/>

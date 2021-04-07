@@ -26,7 +26,7 @@ function App() {
 
   return (
     <Provider store={store}>
-    <div >
+    <div>
       <Router>
         <div className="App">
           <Switch>

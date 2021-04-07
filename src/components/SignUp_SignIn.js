@@ -22,9 +22,9 @@ function SignUp_SignIn(props) {
         <div>
           <Header/>
           <h1 className="text-info py-5 mt-5">Log In or Register</h1>  
-          <button onClick={()=>handleLogIn()} className="btn btn-primary mt-5 mr-4">Log In</button>
-          <button onClick={()=>handleSignUpCustomer()} className="btn btn-primary mt-5 mr-4">Sign Up As Customer</button>
-          <button onClick={()=>handleSignUpBroker()} className="btn btn-primary mt-5">Sign Up As Broker</button>
+          <button onClick={()=>handleLogIn()} className="btn btn-primary mt-5 mr-4">Login</button>
+          <button onClick={()=>handleSignUpCustomer()} className="btn btn-primary mt-5 mr-4">SignUp As Customer</button>
+          <button onClick={()=>handleSignUpBroker()} className="btn btn-primary mt-5">SignUp As Broker</button>
         </div>
     );
 }

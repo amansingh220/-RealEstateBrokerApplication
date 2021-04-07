@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { insertCustomer } from '../redux/Index'
 import '../stylesheets/registration.css'
 import Header from './Header2';
+import icon from'../images/Down Arrow.png'
 
 function AddCustomer ({insertCustomer, ...props}) {
   
@@ -96,7 +97,8 @@ return (
           <div className = 'col-md-10 offset = md-1'>
               <div className = 'row'>
                   <div className = 'col-md-5 register-left'>
-                      <h3>Join Us</h3>
+                      <img src={icon}></img>
+                      <h3 className='join'>Join Us</h3>
                       <p>Welcome To RBA</p>
                       <button type = 'button' className = 'btn btn-primary'>About Us</button>
                   </div>

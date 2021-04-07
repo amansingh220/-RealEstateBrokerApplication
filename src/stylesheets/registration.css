@@ -7,17 +7,21 @@
     overflow: hidden;
 }
 
+.join
+{
+    color: #ffffff;
+}
+
 .register-left
 {   
     text-align: center;
     color: #fff;
     padding: 30px;
-    margin-top: 150px;
+    margin-top: 145px;
 }   
 
 .register-left img
 {
-    margin-top: 60px;
     margin-bottom: 18px;
     width: 80px;
     animation: mover 1s infinite alternate;
@@ -26,7 +30,6 @@
 .register-left p
 {   
     padding: 20px 20px 0;
-    
 }
 
 .register-left .btn-primary
@@ -34,16 +37,16 @@
     border-radius: 1.5rem;
     border: none;
     width: 120px;
-    background: #f8f8f8;
+    background: hsl(212, 69%, 34%);
     font-weight: 600;
-    color: #555;
+    color: rgb(255, 255, 255);
     margin-top: 20px;
     padding: 10px;
 }
 
 .register-left .btn-primary:hover
 {
-    background: #000;
+    background: rgb(168, 30, 30);
 }
 
 .register-right

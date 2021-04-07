@@ -6,7 +6,8 @@ import profile from'../images/profilepicture.jpg'
 import Header from './Header'
 
 function EditCustomer ({updatedCustomerDetails, updateCustomer, ...props}) {
-  let customerData = props.history.location.viewedCustomerDetails === undefined ? props.history.push('/redirecting_to_dashboard') : props.history.location.viewedCustomerDetails
+
+  let customerData = JSON.parse(localStorage.getItem("customer"));
   let customerDetails = {custName: customerData.custName, email: customerData.email, mobile: customerData.mobile, password: customerData.password, city: customerData.city}
   
   let [custNameError, setCustNameError] = useState("");
@@ -104,7 +105,7 @@ function EditCustomer ({updatedCustomerDetails, updateCustomer, ...props}) {
     <React.Fragment>
       <Header/>
       <div Class="ProfileBodyCss">
-        <div class="container rounded bg-white mt-4">
+        <div class="container rounded bg-white mt-5">
           <div class="row">
             <div class="col-md-4 border-right">
               <div class="d-flex flex-column align-items-center text-center p-4 mt-1 py-1 imgwrapper"><img class="img-responsive" src={profile} width="220" height="380"/></div>

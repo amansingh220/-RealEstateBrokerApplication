@@ -10,14 +10,14 @@ import Header from './Header'
 function ViewCustomer ({customerData, fetchCustomer, ...props}) {
   
   useEffect(() => {
-    let custId = 743;
+    let custId = localStorage.getItem("custId");
     fetchCustomer(custId)
   }, [])
 
   function handleEditClick() {
+    localStorage.setItem("customer", JSON.stringify(customerData.customer));
     props.history.push({
       pathname: '/update',
-      viewedCustomerDetails: customerData.customer
     });
   }
 
@@ -36,9 +36,9 @@ function ViewCustomer ({customerData, fetchCustomer, ...props}) {
 
   function handleViewPropertyClick() {
     if(customerData.customer.properties.length !== 0) {
+      localStorage.setItem("properties", JSON.stringify(customerData.customer.properties));
       props.history.push({
         pathname: '/customer_properties',
-        properties: customerData.customer.properties
       });
     } else {
       props.history.push({

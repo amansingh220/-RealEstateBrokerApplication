@@ -14,9 +14,9 @@ function ListAllCustomers ({ customerData, fetchAllCustomers, ...props}) {
   }, [])
 
   function handleViewProfile(custId) {
+    localStorage.setItem("custId1", custId)
     props.history.push({
       pathname: '/customer_profile',
-      customerId: custId
     });
   }
 
