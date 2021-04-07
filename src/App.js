@@ -15,8 +15,15 @@ import Footer from "./components/Footer";
 import DashBoard from "./components/DashBoard";
 import SignUp_SignIn from "./components/SignUp_SignIn";
 import Login from "./components/Login";
+import RegistrationSuccessBox from "./components/RegistrationSuccessBox";
+import ViewCustomerProfile from "./components/ViewCustomerProfile";
+import ConfirmLogout from "./components/ConfirmLogout";
+import NoPropertyBought from "./components/NoPropertyBought";
+import CustomerProperties from "./components/CustomerProperties";
+import RedirectToDashboard from "./components/RedirectToDashboard";
 
 function App() {
+
   return (
     <Provider store={store}>
     <div >
@@ -33,6 +40,12 @@ function App() {
             <Route path = "/dashboard" component = {DashBoard}></Route>
             <Route path = "/signup_signin" component = {SignUp_SignIn}></Route>
             <Route path = "/login" component = {Login}></Route>
+            <Route path = "/registration_success" component = {RegistrationSuccessBox}></Route>
+            <Route path = "/customer_profile" component = {ViewCustomerProfile}></Route>
+            <Route path = "/confirm_logout" component = {ConfirmLogout}></Route>
+            <Route path = "/no_property_bought" component = {NoPropertyBought}></Route>RedirectToDashboard
+            <Route path = "/customer_properties" component = {CustomerProperties}></Route>
+            <Route path = "/redirecting_to_dashboard" component = {RedirectToDashboard}></Route>
           </Switch>
         </div>
       </Router>

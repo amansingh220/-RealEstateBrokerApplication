@@ -30,7 +30,7 @@ export default function ConfirmBox(props) {
         <DialogTitle id="alert-dialog-title">{"Account Deactivated Successfully"}</DialogTitle>
         <DialogContent>
           <DialogContentText id="alert-dialog-description">
-            Redirecting to the home page.
+            Redirecting to the home.
           </DialogContentText>
         </DialogContent>
         <DialogActions>

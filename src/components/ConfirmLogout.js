@@ -10,15 +10,14 @@ import Header from './Header';
 export default function ConfirmBox(props) {
   const [open, setOpen] = React.useState(true);
 
-  const handleAgree = () => {
+  const handleLogOut = () => {
     setOpen(false);
     props.history.push({
-        pathname: '/deactivate',
-        customerId: props.history.location.customerId  
+        pathname: '/', 
       });   
   };
 
-  const handleDisagree = () => {
+  const handleCancel = () => {
     setOpen(false);
     props.history.push({
         pathname: '/profile',  
@@ -34,18 +33,13 @@ export default function ConfirmBox(props) {
           aria-labelledby="alert-dialog-title"
           aria-describedby="alert-dialog-description"
         >
-          <DialogTitle id="alert-dialog-title">{"Deactivate Account?"}</DialogTitle>
-          <DialogContent>
-            <DialogContentText id="alert-dialog-description">
-              Once you will deactivate your account, you will not be able to undo it.
-            </DialogContentText>
-          </DialogContent>
+          <DialogTitle id="alert-dialog-title">{"Log Out of RealEstateBroker ?"}</DialogTitle>
           <DialogActions>
-            <Button onClick={handleAgree}  variant="contained" color="primary">
-              Agree
+            <Button onClick={handleLogOut}  variant="contained" color="primary">
+              Log Out
             </Button>
-            <Button onClick={handleDisagree}  variant="contained" color="secondary">
-              Disagree
+            <Button onClick={handleCancel}  variant="contained" color="secondary">
+              Cancel
             </Button>
           </DialogActions>
         </Dialog>

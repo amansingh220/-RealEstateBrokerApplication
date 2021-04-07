@@ -10,7 +10,11 @@ function SignUp_SignIn(props) {
         history.push("/logIn")
     }
 
-    function handleSignUp() {
+    function handleSignUpCustomer() {
+        history.push("/register")
+    }
+
+    function handleSignUpBroker() {
         history.push("/register")
     }
 
@@ -19,7 +23,8 @@ function SignUp_SignIn(props) {
           <Header/>
           <h1 className="text-info py-5 mt-5">Log In or Register</h1>  
           <button onClick={()=>handleLogIn()} className="btn btn-primary mt-5 mr-4">Log In</button>
-          <button onClick={()=>handleSignUp()} className="btn btn-primary mt-5">Sign Up</button>
+          <button onClick={()=>handleSignUpCustomer()} className="btn btn-primary mt-5 mr-4">Sign Up As Customer</button>
+          <button onClick={()=>handleSignUpBroker()} className="btn btn-primary mt-5">Sign Up As Broker</button>
         </div>
     );
 }

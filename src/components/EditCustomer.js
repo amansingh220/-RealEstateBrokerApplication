@@ -1,13 +1,12 @@
 import React ,{useState ,useEffect} from 'react'
 import { connect } from 'react-redux'
 import { updateCustomer } from '../redux/Index'
-import '../rbacss/profile.css'
-import profile from'../rbacss/profilepicture.jpg'
+import '../stylesheets/profile.css'
+import profile from'../images/profilepicture.jpg'
 import Header from './Header'
 
 function EditCustomer ({updatedCustomerDetails, updateCustomer, ...props}) {
-  let customerMock = {custName: "", email: "", mobile: "", password: "", city: ""};
-  let customerData = props.history.location.viewedCustomerDetails === undefined ? customerMock : props.history.location.viewedCustomerDetails
+  let customerData = props.history.location.viewedCustomerDetails === undefined ? props.history.push('/redirecting_to_dashboard') : props.history.location.viewedCustomerDetails
   let customerDetails = {custName: customerData.custName, email: customerData.email, mobile: customerData.mobile, password: customerData.password, city: customerData.city}
   
   let [custNameError, setCustNameError] = useState("");

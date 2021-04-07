@@ -1,10 +1,10 @@
 import React ,{useState ,useEffect} from 'react'
 import { connect } from 'react-redux'
 import { insertCustomer } from '../redux/Index'
-import '../rbacss/registration.css'
+import '../stylesheets/registration.css'
 import Header from './Header2';
 
-function AddCustomer ({insertCustomer, customerData, ...props}) {
+function AddCustomer ({insertCustomer, ...props}) {
   
   let customerDetails = {custName : "", password : "", mobile : "", email : "", city : ""};
   
@@ -21,7 +21,9 @@ function AddCustomer ({insertCustomer, customerData, ...props}) {
     const checkBox = document.getElementById("confirm");
     if(custNameError === "" && emailError === "" && mobileError === "" && passwordError === "" && cityError === "" && checkBox.checked) {
       insertCustomer(customer)
-      props.history.push('/dashboard')
+      props.history.push({
+        pathname: '/registration_success',
+      });
     }
   }, [submit])
 
@@ -86,20 +88,6 @@ function AddCustomer ({insertCustomer, customerData, ...props}) {
     }
   }
 
-/*   function response() {
-    if(customerData.loading){
-      console.log("loading");
-    }
-
-    else if(customerData.error) {
-      console.log("error");
-    }
-
-    else {
-      console.log("success")
-    }
-  } */
-
 return (
 <React.Fragment>
   <Header/>
@@ -162,11 +150,11 @@ return (
   );
 }
 
-const mapStateToProps = state => {
+/* const mapStateToProps = state => {
   return {
     customerData: state.addedCustomerDetails
   }
-}
+} */
 
 const mapDispatchToProps = dispatch => {
   return {
@@ -175,6 +163,6 @@ const mapDispatchToProps = dispatch => {
 }
 
 export default connect(
-  mapStateToProps,
+  null,
   mapDispatchToProps
 )(AddCustomer)

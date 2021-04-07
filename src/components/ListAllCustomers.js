@@ -5,15 +5,27 @@ import Loading from './Loading';
 import RedirectToDashboard from './RedirectToDashboard';
 import Button from '@material-ui/core/Button';
 import Header from './Header';
+import '../stylesheets/hover.css'
 
-function ListAllCustomers ({ customerData, fetchAllCustomers }) {
+function ListAllCustomers ({ customerData, fetchAllCustomers, ...props}) {
+
   useEffect(() => {
     fetchAllCustomers()
   }, [])
+
+  function handleViewProfile(custId) {
+    props.history.push({
+      pathname: '/customer_profile',
+      customerId: custId
+    });
+  }
+
   return customerData.loading ? (
-    <div className='loading' style={{position: 'absolute',left: '50%', top: '50%',transform: 'translate(-50%, -50%)'}}>
+    <div>
       <Header/>
-      <Loading/>
+      <div className='loading' style={{position: 'absolute',left: '50%', top: '50%',transform: 'translate(-50%, -50%)'}}>
+        <Loading/>
+      </div>
     </div>
   ) : customerData.error ? (
     <React.Fragment>
@@ -25,7 +37,7 @@ function ListAllCustomers ({ customerData, fetchAllCustomers }) {
     <Header/>
     <div className = "py-4 mt-5">
       <div className = "row">
-        <table className = "table table-striped table-bordered">
+        <table className = "table table-striped table-bordered table-hover">
           <thead>
             <tr>
               <th className="bg-success"> Customer UserId</th>
@@ -38,12 +50,12 @@ function ListAllCustomers ({ customerData, fetchAllCustomers }) {
             {
                 customerData.customers.map(
                     customer => 
-                    <tr key = {customer.userId}>
-                      <td className="mt-5"> {customer.userId} </td>   
+                    <tr className="active" key = {customer.userId}>
+                      <td> {customer.userId} </td>   
                       <td> {customer.custName}</td>
                       <td> {customer.email}</td>
                       {<td>
-                        <Button variant="contained" color="primary" disabled>
+                        <Button variant="contained" color="primary" onClick={()=>handleViewProfile(customer.custId)}>
                           View Profile
                         </Button>
                       </td>}

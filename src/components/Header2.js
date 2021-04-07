@@ -1,5 +1,5 @@
 import React from "react";
-import '../rbacss/header.css'
+import '../stylesheets/header.css'
 import { FaSearch } from 'react-icons/fa';
 
 function Header() {
@@ -17,7 +17,7 @@ function Header() {
         >
         </button>
         <a className="navbar-brand text-brand" href="/">
-          Estate<span className="color-b">Agency</span>
+          RealEstate<span className="color-b">Broker</span>
         </a>
 
         <div

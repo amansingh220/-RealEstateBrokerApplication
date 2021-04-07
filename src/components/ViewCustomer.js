@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import { fetchCustomer } from '../redux/Index'
-import '../rbacss/profile.css'
-import profile from'../rbacss/profilepicture.jpg'
+import '../stylesheets/profile.css'
+import profile from'../images/profilepicture.jpg'
 import Loading from './Loading';
 import RedirectToDashboard from './RedirectToDashboard';
 import Header from './Header'
@@ -28,9 +28,31 @@ function ViewCustomer ({customerData, fetchCustomer, ...props}) {
     });
   }
 
+  function handleLogOutClick() {
+    props.history.push({
+      pathname: '/confirm_logout',
+    });
+  }
+
+  function handleViewPropertyClick() {
+    if(customerData.customer.properties.length !== 0) {
+      props.history.push({
+        pathname: '/customer_properties',
+        properties: customerData.customer.properties
+      });
+    } else {
+      props.history.push({
+        pathname: '/no_property_bought',
+      });
+    }
+  }
+
   return customerData.loading ? (
-    <div className='loading' style={{position: 'absolute',left: '50%', top: '50%',transform: 'translate(-50%, -50%)'}}>
-      <Loading/>
+    <div>
+      <Header/>
+      <div className='loading' style={{position: 'absolute',left: '50%', top: '50%',transform: 'translate(-50%, -50%)'}}>
+        <Loading/>
+      </div>
     </div>
   ) : customerData.error ? (
     <React.Fragment>
@@ -96,8 +118,10 @@ function ViewCustomer ({customerData, fetchCustomer, ...props}) {
                   </p>
                 </div>
               </div>
-                <button onClick={()=>handleDeactivateClick()} className = 'btn btn-danger float-right mt-1'>Deactivate Account</button>
-                <button onClick={()=>handleEditClick()} className = 'btn btn-info float-left mt-1 mr-2'>Edit Details</button>
+                <button onClick={()=>handleDeactivateClick()} className = 'btn btn-danger float-right mt-2'>Deactivate Account</button>
+                <button onClick={()=>handleEditClick()} className = 'btn btn-success float-left mt-2 mr-2'>Edit Details</button>
+                <button onClick={()=>handleViewPropertyClick()} className = 'btn btn-info float-left mt-2 mr-2'>View Your Properties</button>
+                <button onClick={()=>handleLogOutClick()} className = 'btn btn-warning float-right mt-2 mr-2'>Log Out</button>
             </div>
           </div>
         </div>

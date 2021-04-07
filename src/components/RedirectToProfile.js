@@ -30,7 +30,7 @@ export default function ConfirmBox() {
         <DialogTitle id="alert-dialog-title">{"Some Error Occurred, Account Deactivation Failed"}</DialogTitle>
         <DialogContent>
           <DialogContentText id="alert-dialog-description">
-            Redirecting to the profile page.
+            Redirecting to the profile.
           </DialogContentText>
         </DialogContent>
         <DialogActions>
