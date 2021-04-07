@@ -10,7 +10,7 @@ import Header from './Header'
 function ViewCustomerProfile ({customerData, fetchCustomer, ...props}) {
   
   useEffect(() => {
-    let custId = props.history.location.customerId;
+    let custId = localStorage.getItem("custId1")
     fetchCustomer(custId)
   }, [])
 
