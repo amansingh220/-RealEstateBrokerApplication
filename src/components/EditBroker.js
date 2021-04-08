@@ -7,6 +7,7 @@ function EditBroker () {
 
     return(
         null
+        
     )
 }
 const mapStateToProps = state => {
