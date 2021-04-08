@@ -22,8 +22,8 @@ function EditCustomer ({updatedCustomerDetails, updateCustomer, ...props}) {
   
   useEffect(() => {
     let custId = customerData.custId;
-    const cb = document.getElementById("confirm");
-    if(custNameError === "" && emailError === "" && mobileError === "" && passwordError === "" && cityError === "" && cb.checked) {
+    const checkBox = document.getElementById("confirm");
+    if(custNameError === "" && emailError === "" && mobileError === "" && passwordError === "" && cityError === "" && checkBox.checked) {
       updateCustomer(customer, custId);
       handleSaveEvent();
     }
@@ -167,11 +167,12 @@ function EditCustomer ({updatedCustomerDetails, updateCustomer, ...props}) {
                     </p>
                   </div>
                 </div>  
-                <div>
-                  <input id='confirm' class="float-left mt-4 mr-2" type="checkbox" value=""/>
-                      <label class="float-left mt-3" for="defaultCheck1">
-                      Check this box to confirm the details
-                      </label>
+                <div class="pretty p-image p-plain float-left mt-3 mr-2">
+                  <input id='confirm' type="checkbox" className="float-right"/>
+                  <div class="state">
+                    <img class="image" src="https://png.pngtree.com/png-vector/20210319/ourmid/pngtree-checkmark-vector-icon-in-flat-style-png-image_3094466.jpg"/>
+                    <label>Check this box to confirm the details</label>
+                  </div>
                 </div>
                 <Button className="float-right ml-3 mt-1" onClick={()=>handleCancelEvent()} variant="contained" color="secondary" style={{backgroundColor: "#d13333", textTransform: 'none'}}>Cancel</Button>
                 <Button className="float-right mt-1" onClick={(event)=>handleSubmit(event)} variant="contained" color="secondary" style={{backgroundColor: "#2b9134", textTransform: 'none'}}>Save Details</Button>

@@ -106,7 +106,7 @@ return (
                         <div className='title-box-d'>
                           <h2 className='title-d'>Register Here</h2>
                         </div>
-                    <form onSubmit={handleSubmit} className = 'register-form'>
+                    <form onSubmit={handleSubmit} className = 'register-form' autoComplete="on">
                         <div className = 'form-group'>
                                <input id = 'custName' required='true'  onChange={(e) => setCustomer({ ...customer, custName: e.target.value })} type = 'text' className = 'form-control' placeholder = "Name"></input>
                                <p className='text-left text-danger ml-1'>{custNameError}</p>
@@ -127,11 +127,12 @@ return (
                                <input id = 'city' required='true' onChange={(e) => setCustomer({ ...customer, city: e.target.value })} type = 'text' className = 'form-control' placeholder = "City"></input>
                                <p className='text-left text-danger ml-1'>{cityError}</p>
                            </div>
-                           <div className="">
-                              <input id='confirm' class="float-left mt-4 mr-2" type="checkbox" value=""/>
-                                <label className="float-left mt-3" for="defaultCheck1">
-                                  Check this box to confirm the details
-                                </label>
+                           <div class="pretty p-image p-plain float-left mt-4 mr-2">
+                              <input id='confirm' type="checkbox" className="float-right"/>
+                              <div class="state">
+                                <img class="image" src="https://png.pngtree.com/png-vector/20210319/ourmid/pngtree-checkmark-vector-icon-in-flat-style-png-image_3094466.jpg"/>
+                                <label>Check this box to confirm the details</label>
+                              </div>
                            </div>
                            <button className = 'btn btn-primary'>Register</button>
                      </form>

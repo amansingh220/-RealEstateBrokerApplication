@@ -13,7 +13,7 @@ function NewComponent() {
           {/* Bootstrap core CSS */}
           <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet" />
           {/* Material Design Bootstrap */}
-          {/* <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.0/css/mdb.min.css" rel="stylesheet" /> */}
+          <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.0/css/mdb.min.css" rel="stylesheet" />
           <footer className="page-footer bg-dark">
             <div className="bg-success">
               <div className="container">
@@ -59,17 +59,17 @@ function NewComponent() {
                   <h6 className="text-uppercase font-weight-bold">Contact</h6>
                   <hr className="bg-success mb-4 mt-0 d-inline-block mx-auto" style={{width: '75px', height: '2px'}} />
                   <ul className="list-unstyled">
-                    <li className="my-2"><i className="fas fa-home mr-3" /> Karachi, NY 10012, US</li>
-                    <li className="my-2"><i className="fas fa-envelope mr-3" /> theproviders@gmail.com</li>
-                    <li className="my-2"><i className="fas fa-phone mr-3" /> + 01 234 567 88</li>
-                    <li className="my-2"><i className="fas fa-print mr-3" /> + 01 234 567 89</li>
+                    <li className="my-2"><i className="fas fa-home mr-3" /> Mathura, NY 10012, INDIA</li>
+                    <li className="my-2"><i className="fas fa-envelope mr-3" /> RealEstateBroker@gmail.com</li>
+                    <li className="my-2"><i className="fas fa-phone mr-3" /> + 919760694337</li>
+                    <li className="my-2"><i className="fas fa-print mr-3" /> + 919545856521</li>
                   </ul>
                 </div>
               </div>
             </div>
             <div className="footer-copyright text-center py-3">
               <p>© Copyright
-                <a href="#">RealEstateBroker.com</a></p>
+                <a className="ml-2" href="#">RealEstateBroker.com</a></p>
               <p>Designed by The Group 4</p>
             </div>
           </footer>
@@ -77,5 +77,4 @@ function NewComponent() {
       );
 }
 
-
-  export default NewComponent;
+export default NewComponent;

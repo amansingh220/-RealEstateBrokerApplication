@@ -3,10 +3,10 @@ import { connect } from 'react-redux'
 import { fetchCustomer } from '../redux/Index'
 import '../stylesheets/profile.css'
 import profile from'../images/profile-unknown3.jpg'
-import Loading from './Loading';
 import RedirectToDashboard from './RedirectToDashboard';
 import Header from './Header'
 import LoadingScreen from './LoadingScreen'
+import Button from '@material-ui/core/Button';
 
 function ViewCustomerProfile ({customerData, fetchCustomer, ...props}) {
   
@@ -77,7 +77,7 @@ function ViewCustomerProfile ({customerData, fetchCustomer, ...props}) {
                   </p>
                 </div>
               </div>
-                <button onClick={()=>handleGoBack()} className = 'btn btn-danger float-right mt-1'>Go Back</button>
+                <Button className="float-right mt-3" onClick={()=>handleGoBack()} variant="contained" color="secondary" style={{backgroundColor: "#d13333", textTransform: 'none'}}>Go Back</Button>
             </div>
           </div>
         </div>
