@@ -3,9 +3,9 @@ import { connect } from 'react-redux'
 import { fetchCustomer } from '../redux/Index'
 import '../stylesheets/profile.css'
 import profile from'../images/profilepicture.jpg'
-import Loading from './Loading';
 import RedirectToDashboard from './RedirectToDashboard';
 import Header from './Header'
+import LoadingScreen from './LoadingScreen'
 
 function ViewCustomer ({customerData, fetchCustomer, ...props}) {
   
@@ -49,10 +49,7 @@ function ViewCustomer ({customerData, fetchCustomer, ...props}) {
 
   return customerData.loading ? (
     <div>
-      <Header/>
-      <div className='loading' style={{position: 'absolute',left: '50%', top: '50%',transform: 'translate(-50%, -50%)'}}>
-        <Loading/>
-      </div>
+     <LoadingScreen/>
     </div>
   ) : customerData.error ? (
     <React.Fragment>

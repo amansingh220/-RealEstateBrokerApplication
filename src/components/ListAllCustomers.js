@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import { fetchAllCustomers } from '../redux/Index'
-import Loading from './Loading';
 import RedirectToDashboard from './RedirectToDashboard';
 import Button from '@material-ui/core/Button';
 import Header from './Header';
 import '../stylesheets/hover.css'
+import LoadingScreen from './LoadingScreen'
 
 function ListAllCustomers ({ customerData, fetchAllCustomers, ...props}) {
 
@@ -22,10 +22,7 @@ function ListAllCustomers ({ customerData, fetchAllCustomers, ...props}) {
 
   return customerData.loading ? (
     <div>
-      <Header/>
-      <div className='loading' style={{position: 'absolute',left: '50%', top: '50%',transform: 'translate(-50%, -50%)'}}>
-        <Loading/>
-      </div>
+     <LoadingScreen/>
     </div>
   ) : customerData.error ? (
     <React.Fragment>

@@ -7,16 +7,15 @@ import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import { useHistory } from 'react-router';
 import Header2 from './Header2';
-import { connect } from 'react-redux'
 
-function ConfirmBox(props) {
+export default function RedirectToDashboard(props) {
   const [open, setOpen] = React.useState(true);
   let history = useHistory()
 
-  const handleOk = () => {
+  const handleAgree = () => {
     setOpen(false);
     history.push({
-        pathname: '/login', 
+        pathname: '/register',
       });   
   };
 
@@ -28,32 +27,18 @@ function ConfirmBox(props) {
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
       >
-        <DialogTitle id="alert-dialog-title">{"Registration successful, please note your login credentials."}</DialogTitle>
+        <DialogTitle id="alert-dialog-title">{"Registration has been Failed"}</DialogTitle>
         <DialogContent>
           <DialogContentText id="alert-dialog-description">
-            Your UserId is {props.customerData.customer.userId}
-          </DialogContentText>
-          <DialogContentText id="alert-dialog-description">
-            Your Password is {props.customerData.customer.password}
+            Try again after some time.
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleOk}  variant="contained" color="primary">
-            OK
+          <Button onClick={handleAgree}  variant="contained" color="primary">
+            Ok
           </Button>
         </DialogActions>
       </Dialog>
     </div>
   );
 }
-
-const mapStateToProps = state => {
-  return {
-    customerData: state.addedCustomerDetails
-  }
-}
-
-export default connect(
-  mapStateToProps,
-  null
-)(ConfirmBox)

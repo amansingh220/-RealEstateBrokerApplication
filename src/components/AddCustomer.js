@@ -23,7 +23,7 @@ function AddCustomer ({insertCustomer, ...props}) {
     if(custNameError === "" && emailError === "" && mobileError === "" && passwordError === "" && cityError === "" && checkBox.checked) {
       insertCustomer(customer)
       props.history.push({
-        pathname: '/registration_success',
+        pathname: '/registration_confirmation',
       });
     }
   }, [submit])

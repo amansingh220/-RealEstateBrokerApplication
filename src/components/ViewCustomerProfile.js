@@ -6,6 +6,7 @@ import profile from'../images/profile-unknown3.jpg'
 import Loading from './Loading';
 import RedirectToDashboard from './RedirectToDashboard';
 import Header from './Header'
+import LoadingScreen from './LoadingScreen'
 
 function ViewCustomerProfile ({customerData, fetchCustomer, ...props}) {
   
@@ -21,8 +22,8 @@ function ViewCustomerProfile ({customerData, fetchCustomer, ...props}) {
   }
 
   return customerData.loading ? (
-    <div className='loading' style={{position: 'absolute',left: '50%', top: '50%',transform: 'translate(-50%, -50%)'}}>
-      <Loading/>
+    <div>
+     <LoadingScreen/>
     </div>
   ) : customerData.error ? (
     <React.Fragment>
