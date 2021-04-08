@@ -97,9 +97,9 @@ return (
           <div className = 'col-md-10 offset = md-1'>
               <div className = 'row'>
                   <div className = 'col-md-5 register-left'>
-                      <img src={icon}></img>
+                      <img className = 'icon' src={icon}></img>
                       <h3 className='join'>Join Us</h3>
-                      <p>Welcome To RBA</p>
+                      <p>Welcome To RealEstateBroker</p>
                       <button type = 'button' className = 'btn btn-primary'>About Us</button>
                   </div>
                   <div className = 'col-md-7 register-right'>

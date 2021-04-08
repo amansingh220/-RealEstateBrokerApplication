@@ -6,6 +6,7 @@ import profile from'../images/profilepicture.jpg'
 import RedirectToDashboard from './RedirectToDashboard';
 import Header from './Header'
 import LoadingScreen from './LoadingScreen'
+import Button from '@material-ui/core/Button';
 
 function ViewCustomer ({customerData, fetchCustomer, ...props}) {
   
@@ -115,10 +116,10 @@ function ViewCustomer ({customerData, fetchCustomer, ...props}) {
                   </p>
                 </div>
               </div>
-                <button onClick={()=>handleDeactivateClick()} className = 'btn btn-danger float-right mt-2'>Deactivate Account</button>
-                <button onClick={()=>handleEditClick()} className = 'btn btn-success float-left mt-2 mr-2'>Edit Details</button>
-                <button onClick={()=>handleViewPropertyClick()} className = 'btn btn-info float-left mt-2 mr-2'>View Your Properties</button>
-                <button onClick={()=>handleLogOutClick()} className = 'btn btn-warning float-right mt-2 mr-2'>Log Out</button>
+                <Button className="float-right mt-2 mr-2" onClick={()=>handleDeactivateClick()} variant="contained" color="secondary" style={{backgroundColor: "#d13333", textTransform: 'none'}}>Deactivate Account</Button>
+                <Button className="float-left mt-2 mr-2" onClick={()=>handleEditClick()} variant="contained" color="secondary" style={{backgroundColor: "#236aad", textTransform: 'none'}}>Edit Details</Button>
+                <Button className="float-left mt-2 mr-2" onClick={()=>handleViewPropertyClick()} variant="contained" color="secondary" style={{backgroundColor: "#2b9134", textTransform: 'none'}}>View Your Properties</Button>
+                <Button className="float-right mt-2 mr-2" onClick={()=>handleLogOutClick()} variant="contained" color="secondary" style={{backgroundColor: "#ca862c", textTransform: 'none'}}>Logout</Button>
             </div>
           </div>
         </div>

@@ -4,6 +4,7 @@ import { updateCustomer } from '../redux/Index'
 import '../stylesheets/profile.css'
 import profile from'../images/profilepicture.jpg'
 import Header from './Header'
+import Button from '@material-ui/core/Button';
 
 function EditCustomer ({updatedCustomerDetails, updateCustomer, ...props}) {
 
@@ -24,7 +25,7 @@ function EditCustomer ({updatedCustomerDetails, updateCustomer, ...props}) {
     const cb = document.getElementById("confirm");
     if(custNameError === "" && emailError === "" && mobileError === "" && passwordError === "" && cityError === "" && cb.checked) {
       updateCustomer(customer, custId);
-      saveEvent();
+      handleSaveEvent();
     }
   }, [submit])
 
@@ -35,13 +36,13 @@ function EditCustomer ({updatedCustomerDetails, updateCustomer, ...props}) {
       setSubmit(customerDetails);
   }
 
-  function cancelEvent() {
+  function handleCancelEvent() {
     props.history.push({
       pathname: '/profile'
     });
   }
 
-  function saveEvent() {
+  function handleSaveEvent() {
      props.history.push({
       pathname: '/profile'
     });
@@ -172,9 +173,8 @@ function EditCustomer ({updatedCustomerDetails, updateCustomer, ...props}) {
                       Check this box to confirm the details
                       </label>
                 </div>
-      
-                <button onClick={()=>cancelEvent()} className = 'btn btn-danger float-right ml-3 mt-1'>Cancel</button>
-                <button className = 'btn btn-success float-right mt-1'>Save Details</button>
+                <Button className="float-right ml-3 mt-1" onClick={()=>handleCancelEvent()} variant="contained" color="secondary" style={{backgroundColor: "#d13333", textTransform: 'none'}}>Cancel</Button>
+                <Button className="float-right mt-1" onClick={(event)=>handleSubmit(event)} variant="contained" color="secondary" style={{backgroundColor: "#2b9134", textTransform: 'none'}}>Save Details</Button>
                 {/* <h6>{JSON.stringify(props.history.location.viewedCustomerDetails.custId)}</h6> */}
               </form>
               </div>
