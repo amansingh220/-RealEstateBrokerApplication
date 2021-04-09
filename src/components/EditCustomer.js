@@ -5,6 +5,7 @@ import '../stylesheets/profile.css'
 import profile from'../images/profilepicture.jpg'
 import Header from './Header'
 import Button from '@material-ui/core/Button';
+import Footer from './Footer'
 
 function EditCustomer ({updatedCustomerDetails, updateCustomer, ...props}) {
 
@@ -106,10 +107,10 @@ function EditCustomer ({updatedCustomerDetails, updateCustomer, ...props}) {
     <React.Fragment>
       <Header/>
       <div Class="ProfileBodyCss">
-        <div class="container rounded bg-white mt-5">
+        <div class="container bg-white mt-5">
           <div class="row">
             <div class="col-md-4 border-right">
-              <div class="d-flex flex-column align-items-center text-center p-4 mt-1 py-1 imgwrapper"><img class="img-responsive" src={profile} width="220" height="380"/></div>
+              <div class="d-flex flex-column align-items-center text-center p-4 mt-1 py-1 imgwrapper"><img class="img-fluid" src={profile} width="220" height="380"/></div>
             </div>
             <div class="col-md-8">
               <div class="py-4">  
@@ -170,26 +171,19 @@ function EditCustomer ({updatedCustomerDetails, updateCustomer, ...props}) {
                 <div class="pretty p-image p-plain float-left mt-3 mr-2">
                   <input id='confirm' type="checkbox" className="float-right"/>
                   <div class="state">
-                    <img class="image" src="https://png.pngtree.com/png-vector/20210319/ourmid/pngtree-checkmark-vector-icon-in-flat-style-png-image_3094466.jpg"/>
+                    <img src="https://png.pngtree.com/png-vector/20210319/ourmid/pngtree-checkmark-vector-icon-in-flat-style-png-image_3094466.jpg"/>
                     <label>Check this box to confirm the details</label>
                   </div>
                 </div>
                 <Button className="float-right ml-3 mt-1" onClick={()=>handleCancelEvent()} variant="contained" color="secondary" style={{backgroundColor: "#d13333", textTransform: 'none'}}>Cancel</Button>
                 <Button className="float-right mt-1" onClick={(event)=>handleSubmit(event)} variant="contained" color="secondary" style={{backgroundColor: "#2b9134", textTransform: 'none'}}>Save Details</Button>
-                {/* <h6>{JSON.stringify(props.history.location.viewedCustomerDetails.custId)}</h6> */}
               </form>
               </div>
             </div>
           </div>
         </div> 
       </div> 
-      {/* <div className='container text-info mt-3'>
-      <h5>Name : {customer.custName}</h5>
-      <h5>Mobile : {customer.mobile}</h5>
-      <h5>Email : {customer.email}</h5>
-      <h5>Password : {customer.password}</h5>
-      <h5>City: {customer.city}</h5>
-    </div> */}
+      <Footer/>
     </React.Fragment>
   );
 }

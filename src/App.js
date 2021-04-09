@@ -11,7 +11,7 @@ import RemoveCustomer from "./components/RemoveCustomer";
 import EditCustomer from "./components/EditCustomer";
 import Home from "./components/Home";
 import ConfirmBoxForRemove from "./components/ConfirmBoxForRemove";
-import Footer from "./components/Footer";
+/* import Footer from "./components/Footer"; */
 import DashBoard from "./components/DashBoard";
 import SignUp_SignIn from "./components/SignUp_SignIn";
 import Login from "./components/Login";
@@ -21,6 +21,8 @@ import ConfirmLogout from "./components/ConfirmLogout";
 import NoPropertyBought from "./components/NoPropertyBought";
 import CustomerProperties from "./components/CustomerProperties";
 import RedirectToDashboard from "./components/RedirectToDashboard";
+import Contact from "./components/Contact";
+import Contact2 from "./components/Contact2";
 
 function App() {
 
@@ -45,11 +47,12 @@ function App() {
             <Route path = "/confirm_logout" component = {ConfirmLogout}></Route>
             <Route path = "/no_property_bought" component = {NoPropertyBought}></Route>RedirectToDashboard
             <Route path = "/customer_properties" component = {CustomerProperties}></Route>
-            <Route path = "/redirecting_to_dashboard" component = {RedirectToDashboard}></Route>  
+            <Route path = "/redirecting_to_dashboard" component = {RedirectToDashboard}></Route>
+            <Route path = "/contact" component = {Contact}></Route>
+            <Route path = "/contact2" component = {Contact2}></Route>
           </Switch>
         </div>
       </Router>
-     {/*  <Footer/> */}
     </div>
     </Provider>
   );

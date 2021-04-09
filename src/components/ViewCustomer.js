@@ -7,6 +7,7 @@ import RedirectToDashboard from './RedirectToDashboard';
 import Header from './Header'
 import LoadingScreen from './LoadingScreen'
 import Button from '@material-ui/core/Button';
+import Footer from './Footer'
 
 function ViewCustomer ({customerData, fetchCustomer, ...props}) {
   
@@ -61,10 +62,10 @@ function ViewCustomer ({customerData, fetchCustomer, ...props}) {
     <React.Fragment>
     <Header/>
     <div Class="ProfileBodyCss mt-4">
-      <div class="container rounded bg-white">
+      <div class="container rounded bg-white container-fluid">
         <div class="row">
           <div class="col-md-4 border-right">
-            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="" src={profile} width="220" height="380"/></div>
+            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="img-fluid" src={profile} width="220" height="380"/></div>
           </div>
           <div class="col-md-8">
             <div class="p-3 py-5">
@@ -125,6 +126,7 @@ function ViewCustomer ({customerData, fetchCustomer, ...props}) {
         </div>
       </div> 
     </div> 
+    <Footer/>
   </React.Fragment>
   )
 }

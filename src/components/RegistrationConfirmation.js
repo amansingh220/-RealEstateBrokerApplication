@@ -39,13 +39,13 @@ function ConfirmBox(props) {
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
       >
-        <DialogTitle id="alert-dialog-title">{"Registration successful, please note your login credentials."}</DialogTitle>
+        <DialogTitle id="alert-dialog-title">{"Registration Successful."}</DialogTitle>
         <DialogContent>
           <DialogContentText id="alert-dialog-description">
-            Your UserId is {props.customerData.customer.userId}
+            Your login credentials has been sent to your email.
           </DialogContentText>
           <DialogContentText id="alert-dialog-description">
-            Your Password is {props.customerData.customer.password}
+            Thank you for joining us.
           </DialogContentText>
         </DialogContent>
         <DialogActions>

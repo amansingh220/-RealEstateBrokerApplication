@@ -4,6 +4,7 @@ import { insertCustomer } from '../redux/Index'
 import '../stylesheets/registration.css'
 import Header from './Header2';
 import icon from'../images/Down Arrow.png'
+import Footer2 from './Footer2';
 
 function AddCustomer ({insertCustomer, ...props}) {
   
@@ -141,23 +142,10 @@ return (
           </div>
       </div>
   </div>
- 
-    {/* <div className='container text-info mt-3'>
-      <h5>Name : {customer.custName}</h5>
-      <h5>Mobile : {customer.mobile}</h5>
-      <h5>Email : {customer.email}</h5>
-      <h5>Password : {customer.password}</h5>
-      <h5>City: {customer.city}</h5>
-    </div> */}
+  <Footer2/>
   </React.Fragment>
   );
 }
-
-/* const mapStateToProps = state => {
-  return {
-    customerData: state.addedCustomerDetails
-  }
-} */
 
 const mapDispatchToProps = dispatch => {
   return {

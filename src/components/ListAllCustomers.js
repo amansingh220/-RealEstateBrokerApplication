@@ -6,6 +6,7 @@ import Button from '@material-ui/core/Button';
 import Header from './Header';
 import '../stylesheets/hover.css'
 import LoadingScreen from './LoadingScreen'
+import Footer from './Footer';
 
 function ListAllCustomers ({ customerData, fetchAllCustomers, ...props}) {
 
@@ -63,6 +64,7 @@ function ListAllCustomers ({ customerData, fetchAllCustomers, ...props}) {
         </table>
       </div>
     </div>
+    <Footer/>
     </React.Fragment>
   )
 }

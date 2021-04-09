@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from './Footer';
 import Header from './Header';
 
 function DashBoard(props) {
@@ -11,6 +12,7 @@ function DashBoard(props) {
         <div>
             <Header/>
             <h1 className='mt-5 py-5'>DashBoard</h1>
+            <Footer/>
         </div>
     );
 }
