@@ -1,0 +1,1 @@
+export const REMOVE_DEAL_DATA = "REMOVE_DEAL_DATA";

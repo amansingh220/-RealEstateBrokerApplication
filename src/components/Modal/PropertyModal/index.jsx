@@ -3,7 +3,6 @@ import cns from "classnames";
 import classes from "./style.module.scss";
 
 const PropertyModal = ({ data, show, toggle }) => {
-  console.log("prpdata", JSON.stringify(data));
   return (
     <>
       {show && (

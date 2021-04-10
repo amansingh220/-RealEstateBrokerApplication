@@ -17,7 +17,6 @@ const ListAllDeals = () => {
       .then(({ data }) => {
         setAllDealsData(data);
         setdataFetched(true);
-        console.log(data);
       });
   }, []);
   const togglePropertyModal = () => {
