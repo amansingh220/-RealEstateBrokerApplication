@@ -1,13 +1,15 @@
 import React ,{useState ,useEffect} from 'react'
 import { connect } from 'react-redux'
 import { updateCustomer } from '../redux/Index'
-import '../rbacss/profile.css'
-import profile from'../rbacss/profilepicture.jpg'
+import '../stylesheets/profile.css'
+import profile from'../images/profilepicture.jpg'
 import Header from './Header'
+import Button from '@material-ui/core/Button';
+import Footer from './Footer'
 
 function EditCustomer ({updatedCustomerDetails, updateCustomer, ...props}) {
-  let customerMock = {custName: "", email: "", mobile: "", password: "", city: ""};
-  let customerData = props.history.location.viewedCustomerDetails === undefined ? customerMock : props.history.location.viewedCustomerDetails
+
+  let customerData = JSON.parse(localStorage.getItem("customer"));
   let customerDetails = {custName: customerData.custName, email: customerData.email, mobile: customerData.mobile, password: customerData.password, city: customerData.city}
   
   let [custNameError, setCustNameError] = useState("");
@@ -21,10 +23,10 @@ function EditCustomer ({updatedCustomerDetails, updateCustomer, ...props}) {
   
   useEffect(() => {
     let custId = customerData.custId;
-    const cb = document.getElementById("confirm");
-    if(custNameError === "" && emailError === "" && mobileError === "" && passwordError === "" && cityError === "" && cb.checked) {
+    const checkBox = document.getElementById("confirm");
+    if(custNameError === "" && emailError === "" && mobileError === "" && passwordError === "" && cityError === "" && checkBox.checked) {
       updateCustomer(customer, custId);
-      saveEvent();
+      handleSaveEvent();
     }
   }, [submit])
 
@@ -35,13 +37,13 @@ function EditCustomer ({updatedCustomerDetails, updateCustomer, ...props}) {
       setSubmit(customerDetails);
   }
 
-  function cancelEvent() {
+  function handleCancelEvent() {
     props.history.push({
       pathname: '/profile'
     });
   }
 
-  function saveEvent() {
+  function handleSaveEvent() {
      props.history.push({
       pathname: '/profile'
     });
@@ -105,10 +107,10 @@ function EditCustomer ({updatedCustomerDetails, updateCustomer, ...props}) {
     <React.Fragment>
       <Header/>
       <div Class="ProfileBodyCss">
-        <div class="container rounded bg-white mt-4">
+        <div class="container bg-white mt-5">
           <div class="row">
             <div class="col-md-4 border-right">
-              <div class="d-flex flex-column align-items-center text-center p-4 mt-1 py-1 imgwrapper"><img class="img-responsive" src={profile} width="220" height="380"/></div>
+              <div class="d-flex flex-column align-items-center text-center p-4 mt-1 py-1 imgwrapper"><img class="img-fluid" src={profile} width="220" height="380"/></div>
             </div>
             <div class="col-md-8">
               <div class="py-4">  
@@ -166,29 +168,22 @@ function EditCustomer ({updatedCustomerDetails, updateCustomer, ...props}) {
                     </p>
                   </div>
                 </div>  
-                <div>
-                  <input id='confirm' class="float-left mt-4 mr-2" type="checkbox" value=""/>
-                      <label class="float-left mt-3" for="defaultCheck1">
-                      Check this box to confirm the details
-                      </label>
+                <div class="pretty p-image p-plain float-left mt-3 mr-2">
+                  <input id='confirm' type="checkbox" className="float-right"/>
+                  <div class="state">
+                    <img src="https://png.pngtree.com/png-vector/20210319/ourmid/pngtree-checkmark-vector-icon-in-flat-style-png-image_3094466.jpg"/>
+                    <label>Check this box to confirm the details</label>
+                  </div>
                 </div>
-      
-                <button onClick={()=>cancelEvent()} className = 'btn btn-danger float-right ml-3 mt-1'>Cancel</button>
-                <button className = 'btn btn-success float-right mt-1'>Save Details</button>
-                {/* <h6>{JSON.stringify(props.history.location.viewedCustomerDetails.custId)}</h6> */}
+                <Button className="float-right ml-3 mt-1" onClick={()=>handleCancelEvent()} variant="contained" color="secondary" style={{backgroundColor: "#d13333", textTransform: 'none'}}>Cancel</Button>
+                <Button className="float-right mt-1" onClick={(event)=>handleSubmit(event)} variant="contained" color="secondary" style={{backgroundColor: "#2b9134", textTransform: 'none'}}>Save Details</Button>
               </form>
               </div>
             </div>
           </div>
         </div> 
       </div> 
-      {/* <div className='container text-info mt-3'>
-      <h5>Name : {customer.custName}</h5>
-      <h5>Mobile : {customer.mobile}</h5>
-      <h5>Email : {customer.email}</h5>
-      <h5>Password : {customer.password}</h5>
-      <h5>City: {customer.city}</h5>
-    </div> */}
+      <Footer/>
     </React.Fragment>
   );
 }

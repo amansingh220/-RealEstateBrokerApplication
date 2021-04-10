@@ -5,6 +5,7 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
+import Header from './Header';
 
 export default function ConfirmBox(props) {
   const [open, setOpen] = React.useState(true);
@@ -26,26 +27,29 @@ export default function ConfirmBox(props) {
 
   return (
     <div>
-      <Dialog
-        open={open}
-        aria-labelledby="alert-dialog-title"
-        aria-describedby="alert-dialog-description"
-      >
-        <DialogTitle id="alert-dialog-title">{"Deactivate Account?"}</DialogTitle>
-        <DialogContent>
-          <DialogContentText id="alert-dialog-description">
-            Once you will deactivate your account, you will not be able to undo it.
-          </DialogContentText>
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={handleAgree}  variant="contained" color="primary">
-            Agree
-          </Button>
-          <Button onClick={handleDisagree}  variant="contained" color="secondary">
-            Disagree
-          </Button>
-        </DialogActions>
-      </Dialog>
+      <Header/>
+      <div>
+        <Dialog
+          open={open}
+          aria-labelledby="alert-dialog-title"
+          aria-describedby="alert-dialog-description"
+        >
+          <DialogTitle id="alert-dialog-title">{"Deactivate Account?"}</DialogTitle>
+          <DialogContent>
+            <DialogContentText id="alert-dialog-description">
+              Once you will deactivate your account, you will not be able to undo it.
+            </DialogContentText>
+          </DialogContent>
+          <DialogActions>
+            <Button onClick={handleAgree}  variant="contained" color="primary">
+              Agree
+            </Button>
+            <Button onClick={handleDisagree}  variant="contained" color="secondary">
+              Disagree
+            </Button>
+          </DialogActions>
+        </Dialog>
+      </div>
     </div>
   );
 }

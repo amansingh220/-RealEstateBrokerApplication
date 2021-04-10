@@ -3,9 +3,9 @@ import { connect } from 'react-redux'
 import { deleteCustomer } from '../redux/Index'
 import Header from './Header';
 import Header2 from './Header2';
-import Loading from './Loading';
-import RedirectToHome from './RedirectToHome';
-import RedirectToProfile from './RedirectToProfile';
+import AccountDeactivated from './AccountDeactivated';
+import AccountDeactivationFailed from './AccountDeactivationFailed';
+import LoadingScreen from './LoadingScreen'
 
 function DeleteCustomer ({ customerData, deleteCustomer, ...props}) {
   
@@ -16,19 +16,18 @@ function DeleteCustomer ({ customerData, deleteCustomer, ...props}) {
 
   
   return customerData.loading ? (
-    <div className='loading' style={{position: 'absolute',left: '50%', top: '50%',transform: 'translate(-50%, -50%)'}}>
-      <Header/>
-      <Loading/>
+    <div>
+     <LoadingScreen/>
     </div>
   ) : customerData.error ? (
     <React.Fragment>
     <Header/>
-    <RedirectToProfile/>
+    <AccountDeactivationFailed/>
     </React.Fragment>
   ) : (
     <React.Fragment>
     <Header2/>
-    <RedirectToHome/>
+    <AccountDeactivated/>
     </React.Fragment>
   )
 }

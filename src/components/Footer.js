@@ -1,103 +1,167 @@
-import React from "react";
-import '../rbacss/header.css'
+import React from 'react';
+import '../assets/img/favicon.png';
+import '../assets/img/apple-touch-icon.png';
+import '../assets/vendor/animate.css/animate.min.css';
+/* import '../assets/vendor/bootstrap/css/bootstrap.min.css'; */
+import '../assets/vendor/bootstrap-icons/bootstrap-icons.css';
+import '../assets/vendor/swiper/swiper-bundle.min.css';
 
 
-
-    function Footer(props) {
-      return (
-        <div>
-    <head>
-      <title>Footer Bootstrap 4</title>
-    
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"/>
-    
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"/>
-    
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet"/>
-    
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.0/css/mdb.min.css" rel="stylesheet"/>
-    </head>
-    <body>
-    
-    <footer class="page-footer bg-dark">
-    
-      <div class="bg-success">
-        <div class="container">
-          <div class="row py-4 d-flex align-items-center">
-           
-            <div class="col-md-12 text-center"> 
-                <a href="#"><i class="fab fa-facebook-f white-text mr-4"> </i></a>         
-                <a href="#"><i class="fab fa-twitter white-text mr-4"> </i></a>
-                <a href="#"><i class="fab fa-google-plus-g white-text mr-4"> </i></a>
-                <a href="#"><i class="fab fa-linkedin-in white-text mr-4"> </i></a>
-                <a href="#"><i class="fab fa-instagram white-text"> </i></a> 
-               </div>
-    
-         </div>
-        </div>
-      </div>
-    
-      <div class="container text-center text-md-left mt-5">
-        <div class="row">
-    
-          <div class="col-md-3 mx-auto mb-4">
-            <h6 class="text-uppercase font-weight-bold">The Providers</h6>
-            <hr class="bg-success mb-4 mt-0 d-inline-block mx-auto" style="width: 125px; height: 2px"/>
-            <p class="mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-          </div>
-    
-          <div class="col-md-2 mx-auto mb-4">
-            <h6 class="text-uppercase font-weight-bold">Products</h6>
-            <hr class="bg-success mb-4 mt-0 d-inline-block mx-auto" style="width: 85px; height: 2px"/>
-           
-             <ul class="list-unstyled">
-                <li class="my-2"><a href="#">Html 5</a></li>        
-                <li class="my-2"><a href="#">Css 3</a></li>
-                <li class="my-2"><a href="#">Bootstrap 4</a></li>
-                <li class="my-2"> <a href="#">JavaScript</a></li>         
-              </ul>
-          </div>
-      
-          <div class="col-md-2 mx-auto mb-4">
-            <h6 class="text-uppercase font-weight-bold">Useful links</h6>
-            <hr class="bg-success mb-4 mt-0 d-inline-block mx-auto" style="width: 110px; height: 2px"/>
+function Footer2(props) {
+    return (
+        <div className="footer">
+                <section class="section-footer">
+    <div className='text-left ml-5'>
+      <div class="row ml-5" >
+        <div class="col-sm-12 col-md-4">
+          <div class="widget-a">
+            <div class="w-header-a">
+              <h3 class="w-title-a text-brand">RealEstateBroker</h3>
+            </div>
+            <div class="w-body-a">
+              <p class="w-text-a color-text-a">
+                Enim minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip exea commodo consequat duis
+                sed aute irure.
+              </p>
+            </div>
+            <div class="w-footer-a">
               <ul class="list-unstyled">
-                <li class="my-2"><a href="#">Home</a></li>        
-                <li class="my-2"><a href="#">About</a></li>
-                <li class="my-2"><a href="#">Services</a></li>
-                <li class="my-2"> <a href="#">Contact</a></li>         
+                <li class="color-a">
+                  <span class="color-text-a">Email .</span> RealEstateBroker2021@hotmail.com
+                </li>
+                <li class="color-a">
+                  <span class="color-text-a">Phone .</span> +91 9760694337
+                </li>
               </ul>
+            </div>
           </div>
-    
-          <div class="col-md-3 mx-auto mb-4">
-            <h6 class="text-uppercase font-weight-bold">Contact</h6>
-            <hr class="bg-success mb-4 mt-0 d-inline-block mx-auto" style="width: 75px; height: 2px"/>
+        </div>
+        <div class="col-md section-md-t3 ml-5">
+          <div class="widget-a ml-5">
+            <div class="w-header-a">
+              <h3 class="w-title-a text-brand">The Company</h3>
+            </div>
+            <div class="w-body-a">
+              <div class="w-body-a">
+                <ul class="list-unstyled">
+                  <li class="item-list-a">
+                    <i class="bi bi-chevron-right"></i> <a href="#">Site Map</a>
+                  </li>
+                  <li class="item-list-a">
+                    <i class="bi bi-chevron-right"></i> <a href="#">Legal</a>
+                  </li>
+                  <li class="item-list-a">
+                    <i class="bi bi-chevron-right"></i> <a href="#">Agent Admin</a>
+                  </li>
+                  <li class="item-list-a">
+                    <i class="bi bi-chevron-right"></i> <a href="#">Careers</a>
+                  </li>
+                  <li class="item-list-a">
+                    <i class="bi bi-chevron-right"></i> <a href="#">Affiliate</a>
+                  </li>
+                  <li class="item-list-a">
+                    <i class="bi bi-chevron-right"></i> <a href="#">Privacy Policy</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 ">
+          <div class="widget-a ml-5">
+            <div class="w-header-a">
+              <h3 class="w-title-a text-brand">International sites</h3>
+            </div>
+            <div class="w-body-a">
               <ul class="list-unstyled">
-                <li class="my-2"><i class="fas fa-home mr-3"></i> Karachi, NY 10012, US</li>
-                <li class="my-2"><i class="fas fa-envelope mr-3"></i> theproviders@gmail.com</li>
-                <li class="my-2"><i class="fas fa-phone mr-3"></i> + 01 234 567 88</li>
-                <li class="my-2"><i class="fas fa-print mr-3"></i> + 01 234 567 89</li>
+                <li class="item-list-a">
+                  <i class="bi bi-chevron-right"></i> <a href="#">Venezuela</a>
+                </li>
+                <li class="item-list-a">
+                  <i class="bi bi-chevron-right"></i> <a href="#">China</a>
+                </li>
+                <li class="item-list-a">
+                  <i class="bi bi-chevron-right"></i> <a href="#">Hong Kong</a>
+                </li>
+                <li class="item-list-a">
+                  <i class="bi bi-chevron-right"></i> <a href="#">Argentina</a>
+                </li>
+                <li class="item-list-a">
+                  <i class="bi bi-chevron-right"></i> <a href="#">Singapore</a>
+                </li>
+                <li class="item-list-a">
+                  <i class="bi bi-chevron-right"></i> <a href="#">Philippines</a>
+                </li>
               </ul>
+            </div>
           </div>
         </div>
       </div>
-    
-      <div class="footer-copyright text-center py-3">
-        <p>&copy; Copyright
-        <a href="#">theprovider.com</a></p>
-        <p>Designed by The Providers</p>
-      </div>
-    </footer>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
-    
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
-    
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.0/js/mdb.min.js"></script>
-    </body>
+    </div>
+  </section>
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 ml-2">
+          <nav class="nav-footer">
+            <ul class="list-inline">
+              <li class="list-inline-item">
+                <a href="#">Home</a>
+              </li>
+              <li class="list-inline-item">
+                <a href="/about">About</a>
+              </li>
+              <li class="list-inline-item">
+                <a href="/properties">Property</a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">Services</a>
+              </li>
+              <li class="list-inline-item">
+                <a href="/contact">Contact</a>
+              </li>
+            </ul>
+          </nav>
+          <div class="socials-a">
+            <ul class="list-inline">
+              <li class="list-inline-item">
+                <a href="https://www.facebook.com/housing.com/?eid=ARAo3DE2ROdOtfMFKA4AIBRvT8MfMZ0bAps9SMLBmXrZVADoW-a-Q0_6F0Ay4b4lnrdZhmNNfgCGyeWC">
+                  <i class="bi bi-facebook" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="https://twitter.com/realestate?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">
+                  <i class="bi bi-twitter" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="https://www.instagram.com/realestateaus/">
+                  <i class="bi bi-instagram" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="https://www.linkedin.com/company/realestate.com">
+                  <i class="bi bi-linkedin" aria-hidden="true"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="copyright-footer">
+            <p class="copyright color-text-a ml-1">
+              &copy; Copyright
+              <span class="color-a ml-2">RealEstateBroker</span> All Rights Reserved.
+            </p>
+          </div>
+          <div class="credits">
+           
+            Designed by <a href="#">Group 4</a>
+          </div>
         </div>
-      );
+      </div>
+    </div>
+  </footer>
+        </div>
+    );
 }
 
-export default Footer;
+export default Footer2;
