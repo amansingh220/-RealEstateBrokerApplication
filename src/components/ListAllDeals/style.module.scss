@@ -1,0 +1,43 @@
+@import "./../../rbacss/vars";
+
+.mainContainer {
+  font-family: "Times New Roman", Times, serif;
+  margin-top: 70px;
+}
+
+.dTable {
+  box-shadow: $lightGreyBorder;
+}
+.TableData:nth-child(2n) {
+  background-color: rgb(226, 244, 255);
+}
+.tableRow {
+  border: 1px solid blue;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1.3px solid rgb(133, 133, 133);
+  &:nth-last-of-type(1) {
+    border-bottom: none;
+  }
+}
+.tableColHeader {
+  font-weight: 600;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid $black;
+}
+.dDisplayNone {
+  display: none;
+}
+.label {
+  font-weight: 600;
+}
+
+@media only screen and (max-width: 767px) {
+  .mDisplayNone {
+    display: none;
+  }
+  .dDisplayNone {
+    display: block;
+  }
+}
