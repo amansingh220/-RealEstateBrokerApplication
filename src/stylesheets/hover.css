@@ -1,3 +1,4 @@
 .table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
-    background-color: rgba(0, 0, 0, 0.137);
+    background-color: rgba(154, 236, 161, 0.575);
+    transition: 0.4s ease
   }

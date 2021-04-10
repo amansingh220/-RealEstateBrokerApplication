@@ -4,7 +4,7 @@ import Footer from './Footer';
 
 function CustomerProperties(props) {
   
-  let properties = JSON.parse(localStorage.getItem("properties"));
+  let loggedCustomer = JSON.parse(sessionStorage.getItem("token"));
 
   return (
     <React.Fragment>
@@ -26,7 +26,7 @@ function CustomerProperties(props) {
             </thead>
             <tbody>
               {
-                  properties.map(
+                  loggedCustomer.properties.map(
                       property => 
                       <tr className="active" key = {property.propId}>
                         <td> {property.propId} </td>   

@@ -22,7 +22,7 @@ function Header() {
         </a>
       <div>
         <div
-          className="navbar-collapse collapse justify-content-center mr-5 px-5"
+          className="navbar-collapse collapse justify-content-center mr-5 px-1"
           id="navbarDefault"
         >
           <ul className="navbar-nav px-1">

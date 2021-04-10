@@ -9,7 +9,7 @@ import Footer from './Footer'
 
 function EditCustomer ({updatedCustomerDetails, updateCustomer, ...props}) {
 
-  let customerData = JSON.parse(localStorage.getItem("customer"));
+  let customerData = JSON.parse(sessionStorage.getItem("token"));
   let customerDetails = {custName: customerData.custName, email: customerData.email, mobile: customerData.mobile, password: customerData.password, city: customerData.city}
   
   let [custNameError, setCustNameError] = useState("");
@@ -118,12 +118,12 @@ function EditCustomer ({updatedCustomerDetails, updateCustomer, ...props}) {
                 <div class="row">
                   <div class="col-md-6">
                     <p className = "text-left">UserId
-                    <input type="text" disabled = "true" className="form-control" value={customerData.userId}/>
+                    <input id = "userId" type="text" disabled = "true" className="form-control" value={customerData.userId}/>
                     </p>
                   </div>
                   <div class="col-md-6">
                     <p className = "text-left">CustomerId
-                    <input type="text" disabled = "true" class="form-control" value={customerData.custId}/>
+                    <input id="custId" type="text" disabled = "true" class="form-control" value={customerData.custId}/>
                     </p>
                   </div>
                 </div>
@@ -158,7 +158,7 @@ function EditCustomer ({updatedCustomerDetails, updateCustomer, ...props}) {
                 <div class="row">
                   <div class="col-md-6">
                     <p className = "text-left">Role
-                    <input type="text" disabled = "true" class="form-control" value={customerData.role}/>
+                    <input id="role" type="text" disabled = "true" class="form-control" value={customerData.role}/>
                     </p>
                   </div>
                   <div class="col-md-6">
@@ -168,15 +168,15 @@ function EditCustomer ({updatedCustomerDetails, updateCustomer, ...props}) {
                     </p>
                   </div>
                 </div>  
-                <div class="pretty p-image p-plain float-left mt-3 mr-2">
+                <div class="pretty p-image p-plain float-left mt-4 mr-2">
                   <input id='confirm' type="checkbox" className="float-right"/>
                   <div class="state">
                     <img src="https://png.pngtree.com/png-vector/20210319/ourmid/pngtree-checkmark-vector-icon-in-flat-style-png-image_3094466.jpg"/>
                     <label>Check this box to confirm the details</label>
                   </div>
                 </div>
-                <Button className="float-right ml-3 mt-1" onClick={()=>handleCancelEvent()} variant="contained" color="secondary" style={{backgroundColor: "#d13333", textTransform: 'none'}}>Cancel</Button>
-                <Button className="float-right mt-1" onClick={(event)=>handleSubmit(event)} variant="contained" color="secondary" style={{backgroundColor: "#2b9134", textTransform: 'none'}}>Save Details</Button>
+                <Button className="float-right ml-3 mt-3" onClick={()=>handleCancelEvent()} variant="contained" color="secondary" style={{backgroundColor: "#d13333", textTransform: 'none'}}>Cancel</Button>
+                <Button className="float-right mt-3" onClick={(event)=>handleSubmit(event)} variant="contained" color="secondary" style={{backgroundColor: "#2b9134", textTransform: 'none'}}>Save Details</Button>
               </form>
               </div>
             </div>

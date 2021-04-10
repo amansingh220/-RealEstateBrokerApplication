@@ -9,8 +9,10 @@ import LoadingScreen from './LoadingScreen'
 
 function DeleteCustomer ({ customerData, deleteCustomer, ...props}) {
   
+  let loggedCustomer = JSON.parse(sessionStorage.getItem("token"));
+
   useEffect(() => {
-    let custId = props.history.location.customerId;
+    let custId = loggedCustomer.custId;
     deleteCustomer(custId)
   }, [])
 

@@ -8,13 +8,14 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import Header from './Header';
 
 export default function ConfirmBox(props) {
+
+  let loggedCustomer = JSON.parse(sessionStorage.getItem("token"));
   const [open, setOpen] = React.useState(true);
 
   const handleAgree = () => {
     setOpen(false);
     props.history.push({
         pathname: '/deactivate',
-        customerId: props.history.location.customerId  
       });   
   };
 

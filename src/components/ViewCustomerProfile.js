@@ -78,7 +78,7 @@ function ViewCustomerProfile ({customerData, fetchCustomer, ...props}) {
                   </p>
                 </div>
               </div>
-                <Button className="float-right mt-3" onClick={()=>handleGoBack()} variant="contained" color="secondary" style={{backgroundColor: "#d13333", textTransform: 'none'}}>Go Back</Button>
+                <Button className="float-right mt-5" onClick={()=>handleGoBack()} variant="contained" color="secondary" style={{backgroundColor: "#d13333", textTransform: 'none'}}>Go Back</Button>
             </div>
           </div>
         </div>

@@ -10,14 +10,15 @@ import Button from '@material-ui/core/Button';
 import Footer from './Footer'
 
 function ViewCustomer ({customerData, fetchCustomer, ...props}) {
+
+  let loggedCustomer = JSON.parse(sessionStorage.getItem("token"));
   
   useEffect(() => {
-    let custId = localStorage.getItem("custId");
+    let custId = loggedCustomer.custId;
     fetchCustomer(custId)
   }, [])
 
   function handleEditClick() {
-    localStorage.setItem("customer", JSON.stringify(customerData.customer));
     props.history.push({
       pathname: '/update',
     });
@@ -26,19 +27,17 @@ function ViewCustomer ({customerData, fetchCustomer, ...props}) {
   function handleDeactivateClick() {
     props.history.push({
       pathname: '/confirm',
-      customerId: customerData.customer.custId
     });
   }
 
   function handleLogOutClick() {
     props.history.push({
-      pathname: '/confirm_logout',
+      pathname: '/logout',
     });
   }
 
   function handleViewPropertyClick() {
     if(customerData.customer.properties.length !== 0) {
-      localStorage.setItem("properties", JSON.stringify(customerData.customer.properties));
       props.history.push({
         pathname: '/customer_properties',
       });

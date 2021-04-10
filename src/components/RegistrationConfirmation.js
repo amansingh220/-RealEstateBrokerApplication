@@ -14,7 +14,7 @@ import RegistrationFailed from './RegistrationFailed';
 function ConfirmBox(props) {
   const [open, setOpen] = React.useState(true);
   let history = useHistory()
-
+  alert(JSON.stringify(props))
   const handleOk = () => {
     setOpen(false);
     history.push({
