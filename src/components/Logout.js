@@ -4,15 +4,15 @@ import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Header from './Header';
+import {removeUserSession } from '../Utils/Common';
 
 export default function ConfirmBox(props) {
   const [open, setOpen] = React.useState(true);
 
   const handleLogOut = () => {
     setOpen(false);
-    props.history.push({
-        pathname: '/', 
-      });   
+    removeUserSession();
+    props.history.push('/login');   
   };
 
   const handleCancel = () => {
