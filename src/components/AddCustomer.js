@@ -44,7 +44,7 @@ function AddCustomer ({insertCustomer, ...props}) {
     const emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
     if(!cityRegex.test(customer.city)) {
-      /* setCityError("City name should only contains alphabets.") */
+      setCityError("City name should only contains alphabets.")
       document.getElementById('city').focus();
       document.getElementById("city").style.borderColor = "red";
       document.getElementById("city").innerHTML=<p>hi</p>
@@ -111,7 +111,7 @@ return (
                     <form onSubmit={handleSubmit} className = 'register-form' autoComplete="on">
                         <div className = 'form-group'>
                                <input  id = 'custName' onChange={(e) => setCustomer({ ...customer, custName: e.target.value })} type = 'text' className = 'form-control' placeholder = "Name" autoFocus required title = {custNameError}></input>
-                               {/* <p className='text-left text-danger ml-1 error'>{custNameError}</p> */}
+                               <p className='text-left text-danger ml-1 error'>{custNameError}</p>
                            </div> 
                            <div className = 'form-group'>
                                <input id = 'email' required='true' onChange={(e) => setCustomer({ ...customer, email: e.target.value })} type = 'text' className = 'form-control' placeholder = "Email"></input>
