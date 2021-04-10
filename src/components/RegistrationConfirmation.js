@@ -14,13 +14,20 @@ import RegistrationFailed from './RegistrationFailed';
 function ConfirmBox(props) {
   const [open, setOpen] = React.useState(true);
   let history = useHistory()
-  alert(JSON.stringify(props))
+
   const handleOk = () => {
     setOpen(false);
     history.push({
         pathname: '/login', 
       });   
-  };
+  }
+
+  const handleRegistrationFailed = () => {
+      setOpen(false);
+      history.push({
+          pathname: '/register', 
+        });  
+  }
 
   return (
     props.customerData.loading ? (
@@ -30,7 +37,26 @@ function ConfirmBox(props) {
             <Loading/>
         </div> 
       </React.Fragment> ) : props.customerData.error ? (
-      <RegistrationFailed/> 
+        <div>
+          <Header2/>
+          <Dialog
+            open={open}
+            aria-labelledby="alert-dialog-title"
+            aria-describedby="alert-dialog-description"
+          >
+            <DialogTitle id="alert-dialog-title">{"Registration Failed."}</DialogTitle>
+            <DialogContent>
+              <DialogContentText id="alert-dialog-description">
+                {props.customerData.error}
+              </DialogContentText>
+            </DialogContent>
+            <DialogActions>
+              <Button onClick={handleRegistrationFailed}  variant="contained" color="primary">
+                OK
+              </Button>
+            </DialogActions>
+          </Dialog>
+        </div>
       ) : (
     <div>
       <Header2/>

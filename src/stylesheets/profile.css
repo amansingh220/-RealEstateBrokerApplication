@@ -7,7 +7,3 @@
     overflow: hidden;
 }
 
-#email, #custName, #password, #city, #mobile, #role, #userId, #custId
-{
-    transition: 0.4s ease;
-}

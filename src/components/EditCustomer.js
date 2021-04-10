@@ -58,48 +58,48 @@ function EditCustomer ({updatedCustomerDetails, updateCustomer, ...props}) {
 
     if(!cityRegex.test(customer.city)) {
       setCityError("City name should only contains alphabets.")
-      document.getElementById('city').focus();
-      document.getElementById("city").style.borderColor = "red";
+      document.getElementById('city1').focus();
+      document.getElementById("city1").style.borderColor = "red";
     } else {
       setCityError("")
-      document.getElementById("city").style.borderColor = "";
+      document.getElementById("city1").style.borderColor = "";
     }
 
     if(!passwordRegex.test(customer.password)) {
       setPasswordError("Password should contains a uppercase, a lowercase character and a number.")
-      document.getElementById('password').focus();
-      document.getElementById("password").style.borderColor = "red";
+      document.getElementById('password1').focus();
+      document.getElementById("password1").style.borderColor = "red";
     } else {
       setPasswordError("")
-      document.getElementById("password").style.borderColor = "";
+      document.getElementById("password1").style.borderColor = "";
     }
 
     if(!mobileRegex.test(customer.mobile)) {
       setMobileError("Please enter a valid mobile number.")
-      document.getElementById('mobile').focus();
-      document.getElementById("mobile").style.borderColor = "red";
+      document.getElementById('mobile1').focus();
+      document.getElementById("mobile1").style.borderColor = "red";
     } else {
       setMobileError("")
-      document.getElementById("mobile").style.borderColor = "";
+      document.getElementById("mobile1").style.borderColor = "";
     }
 
     if(!emailRegex.test(customer.email)) {
    
     setEmailError("Please enter a valid email address.")
-      document.getElementById('email').focus();
-      document.getElementById("email").style.borderColor = "red";
+      document.getElementById('email1').focus();
+      document.getElementById("email1").style.borderColor = "red";
     } else {
       setEmailError("") 
-      document.getElementById("email").style.borderColor = "";
+      document.getElementById("email1").style.borderColor = "";
     }
 
     if(!custNameRegex.test(customer.custName)) {
       setCustNameError("Name should only contains alphabets.")
-      document.getElementById('custName').focus();
-      document.getElementById("custName").style.borderColor = "red";
+      document.getElementById('custName1').focus();
+      document.getElementById("custName1").style.borderColor = "red";
     } else {
       setCustNameError("")
-      document.getElementById("custName").style.borderColor = "";
+      document.getElementById("custName1").style.borderColor = "";
     }
   }
 
@@ -130,13 +130,13 @@ function EditCustomer ({updatedCustomerDetails, updateCustomer, ...props}) {
                 <div class="row">
                   <div class="col-md-6">
                     <p className = "text-left">Name
-                    <input id = 'custName' required='true' value={customer.custName}  onChange={(e) => setCustomer({ ...customer, custName: e.target.value })} type = 'text' className = 'form-control' placeholder = "Name"></input>
+                    <input id = 'custName1' required='true' value={customer.custName}  onChange={(e) => setCustomer({ ...customer, custName: e.target.value })} type = 'text' className = 'form-control' placeholder = "Name"></input>
                     <p className='text-left text-danger ml-1'>{custNameError}</p>
                     </p>
                   </div>
                   <div class="col-md-6">
                     <p className = "text-left">Email Address
-                    <input id = 'email' required='true' value={customer.email} onChange={(e) => setCustomer({ ...customer, email: e.target.value })} type = 'text' className = 'form-control' placeholder = "Email"></input>
+                    <input id = 'email1' required='true' value={customer.email} onChange={(e) => setCustomer({ ...customer, email: e.target.value })} type = 'text' className = 'form-control' placeholder = "Email"></input>
                     <p className='text-left text-danger ml-1'>{emailError}</p>
                     </p>
                   </div>
@@ -144,13 +144,13 @@ function EditCustomer ({updatedCustomerDetails, updateCustomer, ...props}) {
                 <div class="row">
                   <div class="col-md-6">
                     <p className = "text-left">City
-                    <input id = 'city' required='true' value={customer.city} onChange={(e) => setCustomer({ ...customer, city: e.target.value })} type = 'text' className = 'form-control' placeholder = "City"></input>
+                    <input id = 'city1' required='true' value={customer.city} onChange={(e) => setCustomer({ ...customer, city: e.target.value })} type = 'text' className = 'form-control' placeholder = "City"></input>
                     <p className='text-left text-danger ml-1'>{cityError}</p>
                     </p>
                   </div>
                   <div class="col-md-6">
                     <p className = "text-left">Mobile Number
-                    <input id = 'mobile' required='true' value={customer.mobile} onChange={(e) => setCustomer({ ...customer, mobile: e.target.value })} type = 'text' className = 'form-control' placeholder = "Mobile Number"></input>
+                    <input id = 'mobile1' required='true' value={customer.mobile} onChange={(e) => setCustomer({ ...customer, mobile: e.target.value })} type = 'text' className = 'form-control' placeholder = "Mobile Number"></input>
                     <p className='text-left text-danger ml-1'>{mobileError}</p>
                     </p>
                   </div>
@@ -163,7 +163,7 @@ function EditCustomer ({updatedCustomerDetails, updateCustomer, ...props}) {
                   </div>
                   <div class="col-md-6">
                     <p className = "text-left">Password
-                    <input id = 'password' required='true' value={customer.password} onChange={(e) => setCustomer({ ...customer, password: e.target.value })} type = 'text' className = 'form-control' placeholder = "Password"></input>
+                    <input id = 'password1' required='true' value={customer.password} onChange={(e) => setCustomer({ ...customer, password: e.target.value })} type = 'text' className = 'form-control' placeholder = "Password"></input>
                     <p className='text-left text-danger ml-1'>{passwordError}</p>
                     </p>
                   </div>

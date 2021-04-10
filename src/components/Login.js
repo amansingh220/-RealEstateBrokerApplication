@@ -60,11 +60,11 @@ function Login ({ userData, login,...props}) {
 
     <form onSubmit={handleSubmit}>
         <div className="form-group">
-        <input id = 'email1' required='true' onChange={(e) => setCustomer({ ...user, email: e.target.value })} type = 'text' className = 'form-control' placeholder = "Email" required="required"/>                            <p className='text-left text-danger ml-1'>{emailError}</p>
+        <input id = 'email2' required='true' onChange={(e) => setCustomer({ ...user, email: e.target.value })} type = 'text' className = 'form-control' placeholder = "Email" required="required"/>                            <p className='text-left text-danger ml-1'>{emailError}</p>
             
         </div>
         <div className="form-group">
-        <input id = "password1"
+        <input id = "password2"
                  onChange={(e) => setCustomer({ ...user, password: e.target.value })}
                 className="form-control" type="password" placeholder="password" required="required"
               />

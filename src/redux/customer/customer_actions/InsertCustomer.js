@@ -17,7 +17,7 @@ export const insertCustomer = (customer) => {
       })
       .catch(error => {
         // error.message is the error message
-        dispatch(insertCustomerFailure(error.message))
+        dispatch(insertCustomerFailure(error.response.data))
       })
   }
 }
