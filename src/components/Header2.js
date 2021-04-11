@@ -1,70 +1,84 @@
 import React from "react";
-import '../stylesheets/header.css'
-import { FaSearch } from 'react-icons/fa';
+import "../stylesheets/header.css";
+import { FaSearch } from "react-icons/fa";
 
 function Header() {
   return (
     <nav className="navbar navbar-default navbar-trans navbar-expand-lg fixed-top">
       <div className="container ml-5">
-      <div className="container px-1 ml-4">
-        <button
-          className="navbar-toggler collapsed"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarDefault"
-          aria-controls="navbarDefault"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-        </button>
-        <a className="navbar-brand text-brand" href="/dashboard">
-          RealEstate<span className="color-b">Broker</span>
-        </a>
-      <div>
-        <div
-          className="navbar-collapse collapse justify-content-center mr-5 px-5"
-          id="navbarDefault"
-        >
-          <ul className="navbar-nav px-1">
-            <li className="nav-item ml-5">
-              <a className="nav-link"  href="/">
-                Home
-              </a>
-            </li>
+        <div className="container px-1 ml-4">
+          <button
+            className="navbar-toggler collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarDefault"
+            aria-controls="navbarDefault"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          ></button>
+          <a className="navbar-brand text-brand" href="/dashboard">
+            RealEstate<span className="color-b">Broker</span>
+          </a>
+          <div>
+            <div
+              className="navbar-collapse collapse justify-content-center mr-5 px-5"
+              id="navbarDefault"
+            >
+              <ul className="navbar-nav px-1">
+                <li className="nav-item ml-5">
+                  <a className="nav-link" href="/">
+                    Home
+                  </a>
+                </li>
 
-            <li className="nav-item ml-4">
-              <a className="nav-link" href="/signup_signin">
-                Services
-              </a>
-            </li>
+                <li className="nav-item ml-4">
+                  <a className="nav-link" href="/signup_signin">
+                    Services
+                  </a>
+                </li>
 
-            <li className="nav-item ml-4">
-              <a className="nav-link " href="#">
-              Property
-              </a>
-            </li>
+                <li className="nav-item ml-4">
+                  <a className="nav-link " href="#">
+                    Property
+                  </a>
+                </li>
 
-            <li className="nav-item ml-4">
-              <a className="nav-link " href="contact2">
-                Contact
-              </a>
-            </li>
+                <li className="nav-item ml-4">
+                  <a className="nav-link " href="contact2">
+                    Contact
+                  </a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    id="navbarDropdown"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    Deal
+                  </a>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item " href="/addDeals">
+                      Add Deals
+                    </a>
+                    <a class="dropdown-item " href="/allDeals">
+                      List all deals
+                    </a>
+                  </div>
+                </li>
 
-            <li className="nav-item ml-4">
-              <a className="nav-link " href="#">
-                About
-              </a>
-            </li>
-            <li className="nav-item ml-4">
-              <a className="nav-link " href="/signup_signin">
-                Login/Register
-              </a>
-            </li>
-          </ul>
+                <li className="nav-item ml-4">
+                  <a className="nav-link " href="/signup_signin">
+                    Login/Register
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
-
       </div>
       <div className="mr-5">
         <button
@@ -72,10 +86,9 @@ function Header() {
           data-bs-toggle="collapse"
           data-bs-target="#navbarTogglerDemo01"
         >
-          <FaSearch/>
+          <FaSearch />
         </button>
       </div>
-      
     </nav>
   );
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import cns from "classnames";
 import classes from "./style.module.scss";
-
+//This function is used to display properties in box
 const PropertyModal = ({ data, show, toggle }) => {
   return (
     <>

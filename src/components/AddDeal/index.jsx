@@ -10,7 +10,7 @@ import classes from "./style.module.scss";
 import PropertyModal from "./../Modal/PropertyModal";
 import Header from "../Header2";
 import Footer2 from "../Footer2";
-
+//This is a function for add deal method
 const AddDeal = () => {
   const [dealSuccess, setDealSuccess] = useState(false);
   const [dealResponse, setdealResponse] = useState([]);
@@ -25,7 +25,7 @@ const AddDeal = () => {
     setPropertyModalData(dealResponse[index]["property"]);
     togglePropertyModal();
   };
-
+  //This is function for back button when we click on back then field value should be empty automatically
   const handleBack = () => {
     setFieldValue("custId", "");
     setFieldValue("propId", "");
@@ -36,7 +36,7 @@ const AddDeal = () => {
     setPropertyModalData({});
     dispatch(removeDealData());
   };
-
+  //This is for table header when deal happened then table display with full deal details
   const tableHeaders = [
     "DealId",
     "DealDate",
@@ -45,7 +45,7 @@ const AddDeal = () => {
     "CustName",
     "Property",
   ];
-
+  //here used Formik which is take care of the repetitive and annoying stuff—keeping track of values/errors/visited fields and handling submission
   const {
     handleChange,
     handleSubmit,
@@ -60,6 +60,7 @@ const AddDeal = () => {
   } = useFormik({
     enableReinitialize: true,
     initialValues: { custId: "", propId: "", agree: false },
+    //we used yup with formik because of form validation that if dealer enter string or anything other than number than it shows some msg
     validationSchema: yup.object({
       custId: yup
         .string()
@@ -75,6 +76,7 @@ const AddDeal = () => {
         .bool()
         .oneOf([true], "Please Check this box to confirm the details"),
     }),
+    // here if we click submit then axios post fetch data from spring boot backend application
     onSubmit: () => {
       axios
         .post(`http://localhost:9000/rba/adddeal`, {
@@ -103,20 +105,21 @@ const AddDeal = () => {
   return (
     <>
       <Header />
-      <div>
+      {/* this is main form with bootstrap clases and css and classnames used to join different classes based on diff condition */}
+      <div className={classes.fixture}>
         <div className={classes.container1}>
           <form
             onSubmit={handleSubmit}
             className={cns(dealSuccess ? "d-none" : "d-block")}
           >
             <div className={cns("form-group", classes.formname)}>
-              <label htmlFor="number">custId:</label>
+              <label htmlFor="number">Customer Id:</label>
               <Input
                 className={cns(classes.form1)}
                 {...getFieldProps("custId")}
                 name="custId"
                 className={cns("form-control", classes.form)}
-                placeholder="Enter custId"
+                placeholder="Enter customer Id"
                 value={values.custId}
                 onChange={handleChange}
                 error={errors?.custId}
@@ -124,13 +127,13 @@ const AddDeal = () => {
             </div>
             <br />
             <div className={cns("form-group", classes.formname)}>
-              <label htmlFor="number">propId:</label>
+              <label htmlFor="number">Property Id:</label>
               <Input
                 className={cns(classes.form1)}
                 {...getFieldProps("propId")}
                 name="propId"
                 className={cns("form-control", classes.form)}
-                placeholder="Enter propId"
+                placeholder="Enter property Id"
                 values={values.propId}
                 onChange={handleChange}
                 error={errors?.propId}
@@ -146,7 +149,7 @@ const AddDeal = () => {
                   checked={values.agree}
                   onChange={handleChange}
                 />{" "}
-                check this box to confirm the details
+                Check this box to confirm the details
               </label>
             </div>
             <button type="submit" className="btn btn-primary">
@@ -156,6 +159,7 @@ const AddDeal = () => {
         </div>
       </div>
       <Footer2 />
+      {/* here if all criteria meet and deal is succesfully added then full table show with details */}
       {dealSuccess && (
         <div className={classes.mainContainer}>
           <div

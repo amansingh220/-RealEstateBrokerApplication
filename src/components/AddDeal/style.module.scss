@@ -41,11 +41,11 @@
     display: block;
   }
 }
-
-body {
+//This css is for form page
+.fixture {
   background-image: url(./abstract.jpg);
   background-repeat: no-repeat;
-  background-size: 100% 900px;
+  background-size: cover;
 }
 
 .formname {
@@ -65,7 +65,7 @@ body {
   padding: 10px 20px;
   background: lightgray;
   margin: 50px auto;
-  padding: 50px;
+  padding: 80px;
   border-radius: 20px;
   font-family: Georgia, "Times New Roman", Times, serif;
   text-align: center;

@@ -4,13 +4,14 @@ import classes from "./style.module.scss";
 import Header from "./../Header2";
 import cns from "classnames";
 import PropertyModal from "./../Modal/PropertyModal";
-
+import Footer2 from "../Footer2";
+//This is list all deals function where we show all deals with data like id , cost, date, customer, property
 const ListAllDeals = () => {
   const [allDealsData, setAllDealsData] = useState([]);
   const [dataFetched, setdataFetched] = useState(false);
   const [showPropertyModal, setShowPropertyModal] = useState(false);
   const [propertyModalData, setPropertyModalData] = useState({});
-
+  //axios is used to fetch all deals by adding spring boot in backend in  localhost
   useEffect(() => {
     const res = axios
       .get("http://localhost:9000/rba/listalldeals")
@@ -26,7 +27,7 @@ const ListAllDeals = () => {
     setPropertyModalData(allDealsData[index]["property"]);
     togglePropertyModal();
   };
-
+  //This show the table header data which show in frontend
   const tableHeaders = [
     "DealId",
     "DealDate",
@@ -37,6 +38,7 @@ const ListAllDeals = () => {
   ];
   return (
     <>
+      {/* This is header  navigation bar */}
       <Header />
 
       <div className={classes.mainContainer}>
@@ -94,16 +96,9 @@ const ListAllDeals = () => {
               )
             )}
         </div>
-        {/*         
-<div className="flex-row dDisplayNone">
-    <div *ngFor="let user of fetchedUserData" className="flex-row mb-3 tableRow">
-        <div *ngFor="let key of keys" className="col-12 d-inline-block">
-            <span className="label">{{titleCase(key)}}: </span>
-            <span className="data">{{user[key]}}</span>
-        </div>
-    </div>
-</div> */}
+        <Footer2 />
       </div>
+      {/*  This is the property model data when click in property then dialog box will open which shows details */}
       <PropertyModal
         data={propertyModalData}
         show={showPropertyModal}
