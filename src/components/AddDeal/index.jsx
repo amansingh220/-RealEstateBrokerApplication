@@ -8,6 +8,8 @@ import axios from "axios";
 import cns from "classnames";
 import classes from "./style.module.scss";
 import PropertyModal from "./../Modal/PropertyModal";
+import Header from "../Header2";
+import Footer2 from "../Footer2";
 
 const AddDeal = () => {
   const [dealSuccess, setDealSuccess] = useState(false);
@@ -100,51 +102,60 @@ const AddDeal = () => {
 
   return (
     <>
-      <form
-        onSubmit={handleSubmit}
-        className={cns(dealSuccess ? "d-none" : "d-block")}
-      >
-        <div className="form-group">
-          <label htmlFor="number">custId:</label>
-          <Input
-            {...getFieldProps("custId")}
-            name="custId"
-            className="form-control"
-            placeholder="Enter custId"
-            value={values.custId}
-            onChange={handleChange}
-            error={errors?.custId}
-          />
+      <Header />
+      <div>
+        <div className={classes.container1}>
+          <form
+            onSubmit={handleSubmit}
+            className={cns(dealSuccess ? "d-none" : "d-block")}
+          >
+            <div className={cns("form-group", classes.formname)}>
+              <label htmlFor="number">custId:</label>
+              <Input
+                className={cns(classes.form1)}
+                {...getFieldProps("custId")}
+                name="custId"
+                className={cns("form-control", classes.form)}
+                placeholder="Enter custId"
+                value={values.custId}
+                onChange={handleChange}
+                error={errors?.custId}
+              />
+            </div>
+            <br />
+            <div className={cns("form-group", classes.formname)}>
+              <label htmlFor="number">propId:</label>
+              <Input
+                className={cns(classes.form1)}
+                {...getFieldProps("propId")}
+                name="propId"
+                className={cns("form-control", classes.form)}
+                placeholder="Enter propId"
+                values={values.propId}
+                onChange={handleChange}
+                error={errors?.propId}
+              />
+            </div>
+            <div className="form-group form-check">
+              <label className="form-check-label">
+                <Input
+                  {...getFieldProps("agree")}
+                  name="agree"
+                  className="form-check-input"
+                  type="checkbox"
+                  checked={values.agree}
+                  onChange={handleChange}
+                />{" "}
+                check this box to confirm the details
+              </label>
+            </div>
+            <button type="submit" className="btn btn-primary">
+              Submit
+            </button>
+          </form>
         </div>
-        <div className="form-group">
-          <label htmlFor="number">propId:</label>
-          <Input
-            {...getFieldProps("propId")}
-            name="propId"
-            className="form-control"
-            placeholder="Enter propId"
-            values={values.propId}
-            onChange={handleChange}
-            error={errors?.propId}
-          />
-        </div>
-        <div className="form-group form-check">
-          <label className="form-check-label">
-            <Input
-              {...getFieldProps("agree")}
-              name="agree"
-              className="form-check-input"
-              type="checkbox"
-              checked={values.agree}
-              onChange={handleChange}
-            />{" "}
-            check this box to confirm the details
-          </label>
-        </div>
-        <button type="submit" className="btn btn-primary">
-          Submit
-        </button>
-      </form>
+      </div>
+      <Footer2 />
       {dealSuccess && (
         <div className={classes.mainContainer}>
           <div
@@ -208,6 +219,7 @@ const AddDeal = () => {
           </button>
         </div>
       )}
+
       <PropertyModal
         data={propertyModalData}
         show={showPropertyModal}

@@ -41,3 +41,35 @@
     display: block;
   }
 }
+
+body {
+  background-image: url(./abstract.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 900px;
+}
+
+.formname {
+  font-weight: 600;
+  text-align: center;
+  //margin: 100px 0px;
+  padding-top: 30px;
+}
+
+.form1 {
+  max-width: 800px;
+}
+
+.container1 {
+  border: 5px solid burlywood;
+  max-width: 500px;
+  padding: 10px 20px;
+  background: lightgray;
+  margin: 50px auto;
+  padding: 50px;
+  border-radius: 20px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  text-align: center;
+  margin: 100px 0px;
+  display: inline-block;
+  width: 30%;
+}
