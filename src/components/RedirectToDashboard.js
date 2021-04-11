@@ -6,7 +6,7 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import { useHistory } from 'react-router';
-import Header2 from './Header2';
+import Header from './Header';
 
 export default function RedirectToDashboard(props) {
   const [open, setOpen] = React.useState(true);
@@ -15,19 +15,19 @@ export default function RedirectToDashboard(props) {
   const handleAgree = () => {
     setOpen(false);
     history.push({
-        pathname: '/register',
+        pathname: '/dashboard',
       });   
   };
 
   return (
     <div>
-      <Header2/>
+      <Header/>
       <Dialog
         open={open}
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
       >
-        <DialogTitle id="alert-dialog-title">{"Registration has been Failed"}</DialogTitle>
+        <DialogTitle id="alert-dialog-title">{"Something Went Wrong"}</DialogTitle>
         <DialogContent>
           <DialogContentText id="alert-dialog-description">
             Try again after some time.

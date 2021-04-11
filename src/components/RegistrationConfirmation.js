@@ -20,16 +20,43 @@ function ConfirmBox(props) {
     history.push({
         pathname: '/login', 
       });   
-  };
+  }
+
+  const handleRegistrationFailed = () => {
+      setOpen(false);
+      history.push({
+          pathname: '/register', 
+        });  
+  }
 
   return (
-    props.brokerData.loading ? (
+    props.customerData.loading ? (
       <React.Fragment>
+        <Header2/>
         <div className='loading' style={{position: 'absolute',left: '50%', top: '50%',transform: 'translate(-50%, -50%)', color:'green'}}>
             <Loading/>
         </div> 
-      </React.Fragment> ) : props.brokerData.error ? (
-      <RegistrationFailed/> 
+      </React.Fragment> ) : props.customerData.error ? (
+        <div>
+          <Header2/>
+          <Dialog
+            open={open}
+            aria-labelledby="alert-dialog-title"
+            aria-describedby="alert-dialog-description"
+          >
+            <DialogTitle id="alert-dialog-title">{"Registration Failed."}</DialogTitle>
+            <DialogContent>
+              <DialogContentText id="alert-dialog-description">
+                {props.customerData.error}
+              </DialogContentText>
+            </DialogContent>
+            <DialogActions>
+              <Button onClick={handleRegistrationFailed}  variant="contained" color="primary">
+                OK
+              </Button>
+            </DialogActions>
+          </Dialog>
+        </div>
       ) : (
     <div>
       <Header2/>
@@ -38,13 +65,13 @@ function ConfirmBox(props) {
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
       >
-        <DialogTitle id="alert-dialog-title">{"Registration successful, please note your login credentials."}</DialogTitle>
+        <DialogTitle id="alert-dialog-title">{"Registration Successful."}</DialogTitle>
         <DialogContent>
           <DialogContentText id="alert-dialog-description">
-            Your UserId is {props.brokerData.broker.userId}
+            Your login credentials has been sent to your email.
           </DialogContentText>
           <DialogContentText id="alert-dialog-description">
-            Your Password is {props.brokerData.broker.password}
+            Thank you for joining us.
           </DialogContentText>
         </DialogContent>
         <DialogActions>
@@ -59,7 +86,7 @@ function ConfirmBox(props) {
 
 const mapStateToProps = state => {
   return {
-    brokerData: state.addedBrokerDetails
+    customerData: state.addedCustomerDetails
   }
 }
 
