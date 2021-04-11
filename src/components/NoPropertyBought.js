@@ -11,11 +11,13 @@ import Header from './Header';
 export default function ConfirmBox() {
   const [open, setOpen] = React.useState(true);
   let history = useHistory() 
+  let loggedUser = JSON.parse(sessionStorage.getItem("token"));
+  let profilePath =  loggedUser.broId === undefined ? "/profile" : "/broker_profile";
 
   const handleAgree = () => {
     setOpen(false);
     history.push({
-        pathname: '/profile'
+        pathname: profilePath
       });   
   };
 

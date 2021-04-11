@@ -6,13 +6,25 @@ import reducerForDeleteCustomer from './customer/customer_reducers/DeleteCustome
 import reducerForUpdateCustomer from './customer/customer_reducers/UpdateCustomerReducer'
 import reducerForLoginCustomer from './customer/customer_reducers/LoginCustomerReducer'
 
+import reducerForFetchAllBroker from './broker/brokerReducers/FetchAllBrokerReducer'
+import reducerForFetchbroker from './broker/brokerReducers/FetchBrokerReducer'
+import reducerForInsertbroker from './broker/brokerReducers/InsertBrokerReducer'
+import reducerForDeletebroker from './broker/brokerReducers/DeleteBrokerReducer'
+import reducerForUpdatebroker from './broker/brokerReducers/UpdateBrokerReducer'
+
 const rootReducer = combineReducers({ 
   customers : reducerForFetchAllCustomers,
   customerDetails : reducerForFetchCustomer,
   addedCustomerDetails : reducerForInsertCustomer,
   deletedCustomerDetails : reducerForDeleteCustomer,
   updatedCustomerDetails : reducerForUpdateCustomer,
-  userDetails : reducerForLoginCustomer
+  userDetails : reducerForLoginCustomer,
+
+  brokers : reducerForFetchAllBroker,
+  brokerDetails : reducerForFetchbroker,
+  addedBrokerDetails : reducerForInsertbroker,
+  deletedBrokerDetails : reducerForDeletebroker,
+  updatedBrokerDetails : reducerForUpdatebroker
 })
 
 export default rootReducer

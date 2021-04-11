@@ -23,6 +23,13 @@ import RedirectToDashboard from "./components/RedirectToDashboard";
 import Contact from "./components/Contact";
 import Contact2 from "./components/Contact2";
 import LoginProcess from "./components/LoginProcess";
+import AddBroker from "./components/AddBroker";
+import ViewBroker from "./components/ViewBroker";
+import RemoveBroker from "./components/RemoveBroker";
+import EditBroker from "./components/EditBroker";
+import ListAllBrokers from "./components/ListAllBrokers";
+import BrokerProperties from "./components/BrokerProperties";
+import ViewBrokerProfile from "./components/ViewBrokerProfile";
 
 
 function App() {
@@ -35,10 +42,14 @@ function App() {
           <Switch>
             <Route path = "/" exact component = {Home}></Route>
             <Route path = "/customers" component = {ListAllCustomers}></Route>
+            <Route path = "/brokers" component = {ListAllBrokers}></Route>
             <Route path = "/register" component = {AddCustomer}></Route>
             <Route path = "/profile" component = {ViewCustomer}></Route>
+            <Route path = "/broker_profile1" component = {ViewBrokerProfile}></Route>
             <Route path = "/update" component = {EditCustomer}></Route>
-            <Route path = "/deactivate" component = {RemoveCustomer}></Route>
+            <Route path = "/update_broker" component = {EditBroker}></Route>
+            <Route path = "/deactivate_customer_account" component = {RemoveCustomer}></Route>
+            <Route path = "/deactivate_broker_account" component = {RemoveBroker}></Route>
             <Route path = "/confirm" component = {ConfirmAccountDeactivation}></Route>
             <Route path = "/dashboard" component = {DashBoard}></Route>
             <Route path = "/signup_signin" component = {SignUp_SignIn}></Route>
@@ -47,11 +58,15 @@ function App() {
             <Route path = "/customer_profile" component = {ViewCustomerProfile}></Route>
             <Route path = "/logout" component = {Logout}></Route>
             <Route path = "/no_property_bought" component = {NoPropertyBought}></Route>RedirectToDashboard
+            <Route path = "/broker_properties" component = {BrokerProperties}></Route>
             <Route path = "/customer_properties" component = {CustomerProperties}></Route>
             <Route path = "/redirecting_to_dashboard" component = {RedirectToDashboard}></Route>
             <Route path = "/contact" component = {Contact}></Route>
             <Route path = "/contact2" component = {Contact2}></Route>
             <Route path = "/login_process" component = {LoginProcess}></Route>
+            <Route path = "/register_broker" component = {AddBroker}></Route>
+            <Route path = "/login_broker" component = {Login}></Route>
+            <Route path = "/broker_profile" component = {ViewBroker}></Route>
           </Switch>
         </div>
       </Router>

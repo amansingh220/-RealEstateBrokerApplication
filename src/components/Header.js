@@ -3,6 +3,15 @@ import '../stylesheets/header.css'
 import { FaSearch } from 'react-icons/fa';
 
 function Header() {
+
+  let loggedUser = JSON.parse(sessionStorage.getItem("token"));
+  if(loggedUser !== undefined) {
+    var profilePath =  loggedUser.broId === undefined ? "/profile" : "/broker_profile";
+  } else {
+    profilePath = "/"
+  }
+  
+
   return (
     <nav className="navbar navbar-default navbar-trans navbar-expand-lg fixed-top">
       <div className="container ml-5">
@@ -22,10 +31,10 @@ function Header() {
         </a>
       <div>
         <div
-          className="navbar-collapse collapse justify-content-center mr-5 px-1"
+          className="navbar-collapse collapse justify-content-center"
           id="navbarDefault"
         >
-          <ul className="navbar-nav px-1">
+          <ul className="navbar-nav ">
             <li className="nav-item ml-5">
               <a className="nav-link"  href="/dashboard">
                 Home
@@ -35,6 +44,12 @@ function Header() {
             <li className="nav-item ml-4">
               <a className="nav-link" href="/customers">
                 Customers
+              </a>
+            </li>
+
+            <li className="nav-item ml-4">
+              <a className="nav-link" href="/brokers">
+                Brokers
               </a>
             </li>
 
@@ -56,7 +71,7 @@ function Header() {
               </a>
             </li>
             <li className="nav-item ml-4">
-              <a className="nav-link " href="/profile">
+              <a className="nav-link " href={profilePath}>
                 Profile
               </a>
             </li>

@@ -8,6 +8,8 @@ import {removeUserSession } from '../Utils/Common';
 
 export default function ConfirmBox(props) {
   const [open, setOpen] = React.useState(true);
+  let loggedUser = JSON.parse(sessionStorage.getItem("token"));
+  let profilePath = loggedUser.broId === undefined ? "/profile" : "/broker_profile";
 
   const handleLogOut = () => {
     setOpen(false);
@@ -18,7 +20,7 @@ export default function ConfirmBox(props) {
   const handleCancel = () => {
     setOpen(false);
     props.history.push({
-        pathname: '/profile',  
+        pathname: profilePath,  
       });   
   };
 

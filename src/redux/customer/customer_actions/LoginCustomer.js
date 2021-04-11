@@ -17,7 +17,7 @@ export const login = (user) => {
       })
       .catch(error => {
         // error.message is the error message
-        dispatch(loginFailure(error.message))
+        dispatch(loginFailure(error.response.data))
       })
   }
 }

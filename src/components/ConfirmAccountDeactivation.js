@@ -9,20 +9,22 @@ import Header from './Header';
 
 export default function ConfirmBox(props) {
 
-  let loggedCustomer = JSON.parse(sessionStorage.getItem("token"));
+  let loggedUser = JSON.parse(sessionStorage.getItem("token"));
+  let deactivationPath =  loggedUser.broId === undefined ? "/deactivate_customer_account" : "/deactivate_broker_account";
+  let cancelDeactivationPath =  loggedUser.broId === undefined ? "/profile" : "/broker_profile";
   const [open, setOpen] = React.useState(true);
 
   const handleAgree = () => {
     setOpen(false);
     props.history.push({
-        pathname: '/deactivate',
+        pathname: deactivationPath,
       });   
   };
 
   const handleDisagree = () => {
     setOpen(false);
     props.history.push({
-        pathname: '/profile',  
+        pathname: cancelDeactivationPath,  
       });   
   };
 

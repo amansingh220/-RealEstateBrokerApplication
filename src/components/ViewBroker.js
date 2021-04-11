@@ -1,27 +1,27 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
-import { fetchCustomer } from '../redux/Index'
+import { fetchBroker } from '../redux/Index'
 import '../stylesheets/profile.css'
-import profile from'../images/profilepictureofbroker1.jpg'
+import profile from'../images/profilepictureofbroker2.jpg'
 import RedirectToDashboard from './RedirectToDashboard';
 import Header from './Header'
 import LoadingScreen from './LoadingScreen'
 import Button from '@material-ui/core/Button';
 import Footer from './Footer'
 
-function ViewCustomer ({customerData, fetchCustomer, ...props}) {
+function ViewBroker ({brokerData, fetchBroker, ...props}) {
 
-  let loggedCustomer = JSON.parse(sessionStorage.getItem("token"));
+  let loggedBroker = JSON.parse(sessionStorage.getItem("token"));
   
   useEffect(() => {
-    let custId = loggedCustomer.custId;
-    fetchCustomer(custId)
+    let broId = loggedBroker.broId;
+    fetchBroker(broId)
   }, [])
 
   function handleEditClick() {
-    localStorage.setItem("customer", JSON.stringify(customerData.customer));
+    localStorage.setItem("broker", JSON.stringify(brokerData.broker));
     props.history.push({
-      pathname: '/update',
+      pathname: '/update_broker',
     });
   }
 
@@ -38,9 +38,9 @@ function ViewCustomer ({customerData, fetchCustomer, ...props}) {
   }
 
   function handleViewPropertyClick() {
-    if(customerData.customer.properties.length !== 0) {
+    if(brokerData.broker.properties.length !== 0) {
       props.history.push({
-        pathname: '/customer_properties',
+        pathname: '/broker_properties',
       });
     } else {
       props.history.push({
@@ -49,11 +49,11 @@ function ViewCustomer ({customerData, fetchCustomer, ...props}) {
     }
   }
 
-  return customerData.loading ? (
+  return brokerData.loading ? (
     <div>
      <LoadingScreen/>
     </div>
-  ) : customerData.error ? (
+  ) : brokerData.error ? (
     <React.Fragment>
     <Header/>
     <RedirectToDashboard/>
@@ -65,55 +65,55 @@ function ViewCustomer ({customerData, fetchCustomer, ...props}) {
       <div class="container rounded bg-white container-fluid">
         <div class="row">
           <div class="col-md-4 border-right">
-            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="img-fluid" src={profile} width="500" height="100"/></div>
+            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="img-fluid" src={profile} width="250" height="100"/></div>
           </div>
           <div class="col-md-8">
             <div class="p-3 py-5">
               <div class="row mt-2">
                 <div class="col-md-6">
                   <p className = "text-left">UserId
-                  <input type="text" disabled = "true" className="form-control" value={customerData.customer.userId}/>
+                  <input type="text" disabled = "true" className="form-control" value={brokerData.broker.userId}/>
                   </p>
                 </div>
                 <div class="col-md-6">
                   <p className = "text-left">CustomerId
-                  <input type="text" disabled = "true" class="form-control" value={customerData.customer.custId}/>
+                  <input type="text" disabled = "true" class="form-control" value={brokerData.broker.broId}/>
                   </p>
                 </div>
               </div>
               <div class="row mt-3">
                 <div class="col-md-6">
                   <p className = "text-left">Name
-                  <input type="text" disabled = "true" class="form-control" value={customerData.customer.custName}/>
+                  <input type="text" disabled = "true" class="form-control" value={brokerData.broker.broName}/>
                   </p>
                 </div>
                 <div class="col-md-6">
                   <p className = "text-left">Email Address
-                  <input type="text" disabled = "true" class="form-control" value={customerData.customer.email}/>
+                  <input type="text" disabled = "true" class="form-control" value={brokerData.broker.email}/>
                   </p>
                 </div>
               </div>
               <div class="row mt-3">
                 <div class="col-md-6">
                   <p className = "text-left">City
-                  <input type="text" disabled = "true" class="form-control" value={customerData.customer.city}/>
+                  <input type="text" disabled = "true" class="form-control" value={brokerData.broker.city}/>
                   </p>
                 </div>
                 <div class="col-md-6">
                   <p className = "text-left">Mobile Number
-                  <input type="text" disabled = "true" class="form-control" value={customerData.customer.mobile}/>
+                  <input type="text" disabled = "true" class="form-control" value={brokerData.broker.mobile}/>
                   </p>
                 </div>
               </div>
               <div class="row mt-3">
                 <div class="col-md-6">
                   <p className = "text-left">Role
-                  <input type="text" disabled = "true" class="form-control" value={customerData.customer.role}/>
+                  <input type="text" disabled = "true" class="form-control" value={brokerData.broker.role}/>
                   </p>
                 </div>
                 <div class="col-md-6">
                   <p className = "text-left">Password
-                  <input type="text" disabled = "true" class="form-control" value={customerData.customer.password}/>
+                  <input type="text" disabled = "true" class="form-control" value={brokerData.broker.password}/>
                   </p>
                 </div>
               </div>
@@ -133,17 +133,17 @@ function ViewCustomer ({customerData, fetchCustomer, ...props}) {
 
 const mapStateToProps = state => {
   return {
-    customerData: state.customerDetails
+    brokerData: state.brokerDetails
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
-    fetchCustomer: (custId) => dispatch(fetchCustomer(custId))
+    fetchBroker: (broId) => dispatch(fetchBroker(broId))
   }
 }
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(ViewCustomer)
+)(ViewBroker)

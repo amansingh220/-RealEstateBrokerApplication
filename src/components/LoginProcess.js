@@ -6,24 +6,21 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import { useHistory } from 'react-router';
-// import Header2 from './Header2';
-import { connect } from 'react-redux'
-// import Loading from './Loading';
-// import RegistrationFailed from './RegistrationFailed';
+import { connect } from 'react-redux';
 
 function ConfirmBox(props) {
   const [open, setOpen] = React.useState(true);
   let history = useHistory()
-//   let customerData = JSON.parse(localStorage.getItem("userCredentials"));
-localStorage.setItem("token",props.userData.user.userId)
-sessionStorage.setItem("token",JSON.stringify(props.userData.user))
+
+  localStorage.setItem("token",JSON.stringify(props.userData.user))
+  sessionStorage.setItem("token",JSON.stringify(props.userData.user))
 
   const handleLoginSuccess = () => {
 
     setOpen(false);
     history.push({
         pathname: '/dashboard', 
-      });   
+      });
   };
 
 
@@ -52,9 +49,8 @@ sessionStorage.setItem("token",JSON.stringify(props.userData.user))
         <DialogTitle id="alert-dialog-title">{"Login Failed."}</DialogTitle>
         <DialogContent>
           <DialogContentText id="alert-dialog-description">
-            The email or password you have entered does not match to any account.
+            {props.userData.error}
         </DialogContentText>
-          
         </DialogContent>
         <DialogActions>
           <Button onClick={handleLoginFailed}  variant="contained" color="primary">

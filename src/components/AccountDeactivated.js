@@ -14,6 +14,8 @@ export default function ConfirmBox(props) {
 
   const handleAgree = () => {
     setOpen(false);
+    sessionStorage.clear();
+    localStorage.clear();
     history.push({
         pathname: '/',
       });   

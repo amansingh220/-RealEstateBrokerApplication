@@ -18,12 +18,12 @@ function Login ({ userData, login,...props}) {
       const emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
       if(!emailRegex.test(user.email)) {
           setEmailError("Please enter a valid email address.")
-          document.getElementById('email1').focus();
-          document.getElementById("email1").style.borderColor = "red";
+          document.getElementById('email2').focus();
+          document.getElementById("email2").style.borderColor = "red";
         } 
       else {
           setEmailError("") 
-          document.getElementById("email1").style.borderColor = "";
+          document.getElementById("email2").style.borderColor = "";
         }
       }
   function handleSubmit(event)
