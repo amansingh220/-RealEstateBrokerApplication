@@ -1,9 +1,8 @@
 @import url("https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css");
 .ProfileBodyCss {
-    background-image: url('../images/pexels-pixabay-531880.jpg');
-    padding: 135px !important;
-    background-size: contain;
-    height: 100%;
-    overflow: hidden;
+  background-image: url("../images/pexels-pixabay-531880.jpg");
+  padding: 135px !important;
+  background-size: contain;
+  height: 100%;
+  overflow: hidden;
 }
-
