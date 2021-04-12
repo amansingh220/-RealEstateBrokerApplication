@@ -107,11 +107,13 @@ const AddDeal = () => {
       <Header />
       {/* this is main form with bootstrap clases and css and classnames used to join different classes based on diff condition */}
       <div className={classes.fixture}>
-        <div className={classes.container1}>
-          <form
-            onSubmit={handleSubmit}
-            className={cns(dealSuccess ? "d-none" : "d-block")}
-          >
+        <div
+          className={cns(
+            classes.container1,
+            dealSuccess ? "d-none" : "d-inline-block"
+          )}
+        >
+          <form onSubmit={handleSubmit}>
             <div className={cns("form-group", classes.formname)}>
               <label htmlFor="number">Customer Id:</label>
               <Input
@@ -158,7 +160,7 @@ const AddDeal = () => {
           </form>
         </div>
       </div>
-      <Footer2 />
+
       {/* here if all criteria meet and deal is succesfully added then full table show with details */}
       {dealSuccess && (
         <div className={classes.mainContainer}>
@@ -223,7 +225,7 @@ const AddDeal = () => {
           </button>
         </div>
       )}
-
+      <Footer2 />
       <PropertyModal
         data={propertyModalData}
         show={showPropertyModal}

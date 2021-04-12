@@ -41,7 +41,7 @@
     display: block;
   }
 }
-//This css is for form page
+//This css is for form
 .fixture {
   background-image: url(./abstract.jpg);
   background-repeat: no-repeat;
@@ -63,13 +63,17 @@
   border: 5px solid burlywood;
   max-width: 500px;
   padding: 10px 20px;
-  background: lightgray;
+  //background: lightgray;
+  background: linear-gradient(red, transparent),
+    linear-gradient(to top left, lime, transparent),
+    linear-gradient(to top right, blue, transparent);
+  background-blend-mode: screen;
   margin: 50px auto;
-  padding: 80px;
+  padding: 50px;
   border-radius: 20px;
   font-family: Georgia, "Times New Roman", Times, serif;
   text-align: center;
-  margin: 100px 0px;
+  margin: 150px 0px;
   display: inline-block;
   width: 30%;
 }
